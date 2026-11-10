@@ -1,0 +1,4 @@
+# 将 example.com 替换为真实域名，先确认 DNS 指向部署主机。
+example.com {
+    reverse_proxy 127.0.0.1:3000
+}

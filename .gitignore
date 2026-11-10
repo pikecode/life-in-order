@@ -1,0 +1,12 @@
+node_modules/
+.next/
+.env*
+!.env.example
+*.tsbuildinfo
+output/
+
+.playwright-cli/
+
+backups/
+*.dump
+*.partial-*

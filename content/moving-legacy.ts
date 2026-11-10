@@ -1,0 +1,62 @@
+import type { Task } from "./moving";
+export const legacyVersion = "moving-v1";
+export const legacyTasks: readonly Task[] = [
+  {
+    id: "handover",
+    title: "和原公司确认交接安排",
+    stage: 0,
+    body: "向人事和直属负责人确认最后工作日、交接对象及需要取得的文件。请以公司书面答复为准。",
+    materials: ["交接事项草稿", "待确认问题"],
+    contact: "原公司人事与直属负责人",
+  },
+  {
+    id: "lease",
+    title: "核对旧住处的退租安排",
+    stage: 1,
+    condition: "oldLease",
+    body: "查看租约中的通知、交房和押金约定，向房东确认交房时间，保留沟通与交接记录。不自动判断合同效力。",
+    materials: ["现有租约", "入住时的交接记录"],
+    contact: "房东或租赁机构",
+  },
+  {
+    id: "housing",
+    title: "安排新城市的落脚住处",
+    stage: 1,
+    condition: "needHousing",
+    body: "先确认工作地点与通勤范围，再比较临时住宿和长期租住。签约付款前核对房源与对方身份，不在本产品上传身份证或租约。",
+    materials: ["通勤范围", "住宿预算"],
+    contact: "房东、租赁机构或公司人事",
+  },
+  {
+    id: "moving",
+    title: "整理随身与搬运物品",
+    stage: 1,
+    body: "区分随身、寄送与暂存物品。对搬运报价、取送时间及损坏处理约定逐项确认，保留清单。",
+    materials: ["物品清单", "搬运报价"],
+    contact: "搬运服务方",
+  },
+  {
+    id: "onboarding",
+    title: "确认报到时间和材料",
+    stage: 2,
+    body: "请新公司人事给出书面报到安排与材料清单，只向对方确认的正式渠道提交资料。本清单不替代公司要求。",
+    materials: ["录用通知", "人事提供的材料清单"],
+    contact: "新公司人事",
+  },
+  {
+    id: "benefits",
+    title: "向人事确认参保衔接事项",
+    stage: 2,
+    body: "说明自己的离职与入职安排，询问是否需要本人办理事项及对应官方入口。本产品未核实地区政策，不判断资格、期限或待遇。",
+    materials: ["需要向人事确认的问题"],
+    contact: "新旧公司人事、当地官方服务渠道",
+  },
+  {
+    id: "settle",
+    title: "检查入住与日常生活安排",
+    stage: 3,
+    body: "入住时记录房屋与设施状况，确认钥匙、费用交接及维修联系人；熟悉通勤和附近生活设施。",
+    materials: ["入住交接清单"],
+    contact: "房东或物业",
+  },
+];

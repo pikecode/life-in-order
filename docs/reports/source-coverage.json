@@ -1,0 +1,2981 @@
+{
+  "checkedAt": "2026-11-10T08:14:02.604Z",
+  "commit": "dff814dcbb0a2e968acc0af48e418814655ba1df",
+  "tree": "df9926ae6b5dd84f9204984302cd5d5b458eaf63",
+  "remoteHead": null,
+  "scope": "fixed-source-commit",
+  "upstreamCheck": "not-requested",
+  "passed": true,
+  "sourceFiles": 337,
+  "included": 293,
+  "excluded": [
+    {
+      "path": ".claude/skills/life-decision-guide/SKILL.md",
+      "gitBlob": "0af6ed5ecb381aa81bf6e61dd5170971c8453b12",
+      "size": 960,
+      "status": "excluded",
+      "reason": "开发指令与技能，不作为生活知识执行或导入"
+    },
+    {
+      "path": ".github/FUNDING.yml",
+      "gitBlob": "457e32fa1fd3d8fa5cd3f1316cfafa4b39d63ff7",
+      "size": 92,
+      "status": "excluded",
+      "reason": "仓库程序、构建或维护配置，不属于读物原文"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/1-纠错.yml",
+      "gitBlob": "7348d0e53b968e7b264785320efd1fb29d95da59",
+      "size": 848,
+      "status": "excluded",
+      "reason": "仓库程序、构建或维护配置，不属于读物原文"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/2-新内容.yml",
+      "gitBlob": "15112fef72baf1b4a1b8ef0f3ce66d8fdf418543",
+      "size": 932,
+      "status": "excluded",
+      "reason": "仓库程序、构建或维护配置，不属于读物原文"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "gitBlob": "93eb3307f2a994e7c91b209a275cdb983425561b",
+      "size": 249,
+      "status": "excluded",
+      "reason": "仓库程序、构建或维护配置，不属于读物原文"
+    },
+    {
+      "path": ".github/workflows/book.yml",
+      "gitBlob": "8c5475e41de9fdb06e4098662616e0537cca217f",
+      "size": 6730,
+      "status": "excluded",
+      "reason": "仓库程序、构建或维护配置，不属于读物原文"
+    },
+    {
+      "path": ".github/workflows/links.yml",
+      "gitBlob": "c773064da2003be486086e33505a68b5469956ea",
+      "size": 985,
+      "status": "excluded",
+      "reason": "仓库程序、构建或维护配置，不属于读物原文"
+    },
+    {
+      "path": ".gitignore",
+      "gitBlob": "b0c2f5b4df8318c6bc471f0fa8c4bfc47a834a51",
+      "size": 35,
+      "status": "excluded",
+      "reason": "仓库程序、构建或维护配置，不属于读物原文"
+    },
+    {
+      "path": ".nojekyll",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "size": 0,
+      "status": "excluded",
+      "reason": "仓库程序、构建或维护配置，不属于读物原文"
+    },
+    {
+      "path": "AGENTS.md",
+      "gitBlob": "89aae16c4903b1e31b9a78c653e895c4fb5d957b",
+      "size": 697,
+      "status": "excluded",
+      "reason": "开发指令与技能，不作为生活知识执行或导入"
+    },
+    {
+      "path": "CLAUDE.md",
+      "gitBlob": "0bb6f576bdd5438f9b4af6fcf0dd4ba337c3095d",
+      "size": 121963,
+      "status": "excluded",
+      "reason": "开发指令与技能，不作为生活知识执行或导入"
+    },
+    {
+      "path": "ads/mcyyy-side.webp",
+      "gitBlob": "128a154d059c65971f3bbecd57396fe31a30626a",
+      "size": 57464,
+      "status": "excluded",
+      "reason": "仓库程序、构建或维护配置，不属于读物原文"
+    },
+    {
+      "path": "ads/mcyyy.webp",
+      "gitBlob": "2542dd4f680488259a2c8d28b868c3f7547d2f5c",
+      "size": 54802,
+      "status": "excluded",
+      "reason": "仓库程序、构建或维护配置，不属于读物原文"
+    },
+    {
+      "path": "ads/wechat-reward.png",
+      "gitBlob": "0ab98ca8540deeecaba7d9637ae7c06225b8e501",
+      "size": 138104,
+      "status": "excluded",
+      "reason": "仓库品牌或宣传图片，保留来源，不复用为本站素材"
+    },
+    {
+      "path": "index.html",
+      "gitBlob": "5387be6b5a5993413a16a2b2671ac082dc21b107",
+      "size": 109719,
+      "status": "excluded",
+      "reason": "重复生成的网页/电子书导出，正文已独立导入"
+    },
+    {
+      "path": "og.png",
+      "gitBlob": "e8152845134f1c82468d788991b9fe6a4d34b6ae",
+      "size": 179423,
+      "status": "excluded",
+      "reason": "仓库品牌或宣传图片，保留来源，不复用为本站素材"
+    },
+    {
+      "path": "robots.txt",
+      "gitBlob": "6319751f5425e47cc6ce1f35f870f9828eec2c51",
+      "size": 92,
+      "status": "excluded",
+      "reason": "仓库程序、构建或维护配置，不属于读物原文"
+    },
+    {
+      "path": "selfcheck.html",
+      "gitBlob": "09c05f4777267631957f5d98e028d548965f5b89",
+      "size": 34249,
+      "status": "excluded",
+      "reason": "重复生成的网页/电子书导出，正文已独立导入"
+    },
+    {
+      "path": "sitemap.xml",
+      "gitBlob": "9aab9bf488be761673ab74b2d2cda36eaff286e5",
+      "size": 671,
+      "status": "excluded",
+      "reason": "仓库程序、构建或维护配置，不属于读物原文"
+    },
+    {
+      "path": "skills/life-decision-guide/README.md",
+      "gitBlob": "4d18c6abd885b27dea5fcb0d711ed9b5ee6ab6f7",
+      "size": 2685,
+      "status": "excluded",
+      "reason": "开发指令与技能，不作为生活知识执行或导入"
+    },
+    {
+      "path": "skills/life-decision-guide/SKILL.md",
+      "gitBlob": "21fe15556c5bfad135cd2e64ac7e3389d1a59d5c",
+      "size": 8569,
+      "status": "excluded",
+      "reason": "开发指令与技能，不作为生活知识执行或导入"
+    },
+    {
+      "path": "tools/ad-mcyyy-bg.webp",
+      "gitBlob": "c300750a61ef2c3412c38dcdd9b9982ef6e8642a",
+      "size": 209960,
+      "status": "excluded",
+      "reason": "仓库程序、构建或维护配置，不属于读物原文"
+    },
+    {
+      "path": "tools/ad-mcyyy-side.html",
+      "gitBlob": "0ea17131bb95adc1ed17c6d26609e3c33cb75da9",
+      "size": 2036,
+      "status": "excluded",
+      "reason": "重复生成的网页/电子书导出，正文已独立导入"
+    },
+    {
+      "path": "tools/ad-mcyyy.html",
+      "gitBlob": "9acd4c80a534489668de31d3cfd687deed38d7af",
+      "size": 2969,
+      "status": "excluded",
+      "reason": "重复生成的网页/电子书导出，正文已独立导入"
+    },
+    {
+      "path": "tools/anki/build.mjs",
+      "gitBlob": "c81ac96270b26cda94d3ec48925c2752ada32e9b",
+      "size": 11402,
+      "status": "excluded",
+      "reason": "仓库程序、构建或维护配置，不属于读物原文"
+    },
+    {
+      "path": "tools/check-links.mjs",
+      "gitBlob": "ebf626e007e6f5c1f0a59a1903e979657471349f",
+      "size": 5828,
+      "status": "excluded",
+      "reason": "仓库程序、构建或维护配置，不属于读物原文"
+    },
+    {
+      "path": "tools/check-plain.mjs",
+      "gitBlob": "7019a838333e005694f4b688cd0493886d16b321",
+      "size": 5073,
+      "status": "excluded",
+      "reason": "仓库程序、构建或维护配置，不属于读物原文"
+    },
+    {
+      "path": "tools/check-refs.mjs",
+      "gitBlob": "58ad7571447ee6c80b1043d16ae0ac971c6c27e5",
+      "size": 20701,
+      "status": "excluded",
+      "reason": "仓库程序、构建或维护配置，不属于读物原文"
+    },
+    {
+      "path": "tools/check-selfcheck.mjs",
+      "gitBlob": "6308b79dd1a758aa95c87311e11611e39abbab53",
+      "size": 4191,
+      "status": "excluded",
+      "reason": "仓库程序、构建或维护配置，不属于读物原文"
+    },
+    {
+      "path": "tools/check-split.mjs",
+      "gitBlob": "24aa6671a72f7b23d0a420c9b135c87d5b81fc96",
+      "size": 2195,
+      "status": "excluded",
+      "reason": "仓库程序、构建或维护配置，不属于读物原文"
+    },
+    {
+      "path": "tools/epub/build.mjs",
+      "gitBlob": "3f3f6eca2f9220ddf03ef3284d0e372b3efabb3f",
+      "size": 10029,
+      "status": "excluded",
+      "reason": "仓库程序、构建或维护配置，不属于读物原文"
+    },
+    {
+      "path": "tools/epub/package-lock.json",
+      "gitBlob": "db9604256ecb10a9b75f5fb80a8591eab87397ba",
+      "size": 651,
+      "status": "excluded",
+      "reason": "仓库程序、构建或维护配置，不属于读物原文"
+    },
+    {
+      "path": "tools/epub/package.json",
+      "gitBlob": "daa2820956539a6041ef13c2f33eb56b457ef4c1",
+      "size": 242,
+      "status": "excluded",
+      "reason": "仓库程序、构建或维护配置，不属于读物原文"
+    },
+    {
+      "path": "tools/epub/style.css",
+      "gitBlob": "51413ea82889f1a1549dc0e5c97d8995ca25b6e4",
+      "size": 912,
+      "status": "excluded",
+      "reason": "仓库程序、构建或维护配置，不属于读物原文"
+    },
+    {
+      "path": "tools/lib/book.mjs",
+      "gitBlob": "8983658efa864593d1a8179e931ab67df3abdfba",
+      "size": 3577,
+      "status": "excluded",
+      "reason": "仓库程序、构建或维护配置，不属于读物原文"
+    },
+    {
+      "path": "tools/lib/split-items.mjs",
+      "gitBlob": "c04d5f94609c787b40ccb2f796a8fa062c169a8f",
+      "size": 4839,
+      "status": "excluded",
+      "reason": "仓库程序、构建或维护配置，不属于读物原文"
+    },
+    {
+      "path": "tools/lib/zip.mjs",
+      "gitBlob": "6147b068634c415c18cf70fc9b6d80a8b91d0333",
+      "size": 2440,
+      "status": "excluded",
+      "reason": "仓库程序、构建或维护配置，不属于读物原文"
+    },
+    {
+      "path": "tools/offline/build.mjs",
+      "gitBlob": "368b996170a3a4b9762d2310b67f30d7a630d828",
+      "size": 4377,
+      "status": "excluded",
+      "reason": "仓库程序、构建或维护配置，不属于读物原文"
+    },
+    {
+      "path": "tools/og.html",
+      "gitBlob": "b5681af778549cc3f2c3f1a33ee7c14de8b95266",
+      "size": 3010,
+      "status": "excluded",
+      "reason": "重复生成的网页/电子书导出，正文已独立导入"
+    },
+    {
+      "path": "tools/pdf/build.mjs",
+      "gitBlob": "47d0946e7260e8b78bdd48e3aba5da4888552622",
+      "size": 5441,
+      "status": "excluded",
+      "reason": "仓库程序、构建或维护配置，不属于读物原文"
+    },
+    {
+      "path": "tools/pdf/template.typ",
+      "gitBlob": "c4407437ab6b357f26ee5910f01ca03a38fc60c1",
+      "size": 3349,
+      "status": "excluded",
+      "reason": "仓库程序、构建或维护配置，不属于读物原文"
+    },
+    {
+      "path": "tools/sync-stats.mjs",
+      "gitBlob": "6f5a7ddf180d1b30615c3496258537a260ca3c8c",
+      "size": 12192,
+      "status": "excluded",
+      "reason": "仓库程序、构建或维护配置，不属于读物原文"
+    },
+    {
+      "path": "tools/updates.mjs",
+      "gitBlob": "3deebbedae64531a9663bcb6b519e7b2e7e5c997",
+      "size": 10007,
+      "status": "excluded",
+      "reason": "仓库程序、构建或维护配置，不属于读物原文"
+    },
+    {
+      "path": "updates.json",
+      "gitBlob": "7cc56148be7c9ff4ddc7485871165c365079b67f",
+      "size": 22980,
+      "status": "excluded",
+      "reason": "仓库程序、构建或维护配置，不属于读物原文"
+    }
+  ],
+  "kinds": {
+    "chapter": 34,
+    "article": 9,
+    "verification": 244,
+    "reference": 6
+  },
+  "shortEntries": 772,
+  "chunks": 1837,
+  "index": {
+    "entries": {
+      "expected": 772,
+      "indexed": 772,
+      "dimensions": 1024
+    },
+    "documents": {
+      "expected": 1837,
+      "indexed": 1837,
+      "dimensions": 1024
+    }
+  },
+  "failures": [],
+  "files": [
+    {
+      "path": "LICENSE",
+      "kind": "reference",
+      "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
+      "gitBlob": "da6ab6cc8f333d7e89a99812866df8f24374d47c",
+      "bytes": 18657,
+      "chunks": 12,
+      "matched": true
+    },
+    {
+      "path": "LICENSE-CODE",
+      "kind": "reference",
+      "sha256": "b5637b996d72e74dac01e8799701ff6440b5a979cd15a29ac120e7ae57963c67",
+      "gitBlob": "949d610ab809da6a016a07a4cb97ce3dce59e32a",
+      "bytes": 1069,
+      "chunks": 1,
+      "matched": true
+    },
+    {
+      "path": "README.md",
+      "kind": "reference",
+      "sha256": "8af24ad56de6b073be6e23af9fabf463baeb45f312a1d9f41dfba641a385baf4",
+      "gitBlob": "9f0b69735c9f90cf46f085011e2855a2738a6b89",
+      "bytes": 52813,
+      "chunks": 14,
+      "matched": true
+    },
+    {
+      "path": "book/01-不要早死.md",
+      "kind": "chapter",
+      "sha256": "64d856f8656a2dcf99931d86364b8411fd335368346d70dfbb42f1b366cdfc96",
+      "gitBlob": "dafb85e2008ff5c8475dd76c3fd6e42d911d2939",
+      "bytes": 168942,
+      "chunks": 58,
+      "matched": true
+    },
+    {
+      "path": "book/02-不要慢慢死.md",
+      "kind": "chapter",
+      "sha256": "e710eb58e63863cecb228819c57e627833fa220231697b8dc8bbd6a262db2509",
+      "gitBlob": "4fef0548dc3df1a8bcf0cbe63bf84c53bc06e248",
+      "bytes": 142654,
+      "chunks": 51,
+      "matched": true
+    },
+    {
+      "path": "book/03-不要浪费精力.md",
+      "kind": "chapter",
+      "sha256": "d0fe78abd8c96e3ec38c0762cddbbd6b3dfa1eaf0456b0c45aadb70a75a43207",
+      "gitBlob": "d0f3f3d6cef94408c1b997dd7b67f739da922c4c",
+      "bytes": 67976,
+      "chunks": 22,
+      "matched": true
+    },
+    {
+      "path": "book/04-不要浪费时间.md",
+      "kind": "chapter",
+      "sha256": "0ce41e57732cdadef83b5ba19f1ba4fae1c23c9463bec5537fd07bbb3df9c3ab",
+      "gitBlob": "79fcf1f3f1004cc278d87779f5dc27c8d992cc3f",
+      "bytes": 30566,
+      "chunks": 10,
+      "matched": true
+    },
+    {
+      "path": "book/05-不要浪费钱.md",
+      "kind": "chapter",
+      "sha256": "d8e50910ce89fa1d44777ebe162b896c93deda7d714cbc2d76e676a64b7af4d1",
+      "gitBlob": "c20253c2423fdf9f04877363633962f0dbd617fc",
+      "bytes": 151638,
+      "chunks": 44,
+      "matched": true
+    },
+    {
+      "path": "book/06-反面清单.md",
+      "kind": "chapter",
+      "sha256": "22bff774d0d2a04ef779307e781e4cccb7c5a8bfef21f9a4070413b1b666468d",
+      "gitBlob": "49538652ecef4b50bf9fd0172fa43b61d20d5cb7",
+      "bytes": 131404,
+      "chunks": 43,
+      "matched": true
+    },
+    {
+      "path": "book/07-没钱的时候怎么活.md",
+      "kind": "chapter",
+      "sha256": "b193ce757db80ba5dab89b98f09ee56ce5278b0c4386a99f87db71cb014336c1",
+      "gitBlob": "c2c9aea500520b217848fc499bbabff02819f6d8",
+      "bytes": 77861,
+      "chunks": 22,
+      "matched": true
+    },
+    {
+      "path": "book/08-别把自己搭进去.md",
+      "kind": "chapter",
+      "sha256": "8291173460cd7d3e611e6273ae59bcef546be8ff067130abf34684acc3a27273",
+      "gitBlob": "4a30c624e86a0b0098afe3710aad135cd16d0f15",
+      "bytes": 155442,
+      "chunks": 43,
+      "matched": true
+    },
+    {
+      "path": "book/09-普通人容易踩的法律红线.md",
+      "kind": "chapter",
+      "sha256": "7aeb5313df434bc0a612cd17c09f6d5b1d69aa479d3121c5fb07b5970ab56a35",
+      "gitBlob": "ecb3735922b0912c1f2e250d039c56631ec71c38",
+      "bytes": 113040,
+      "chunks": 33,
+      "matched": true
+    },
+    {
+      "path": "book/10-恋爱和结婚划不划算.md",
+      "kind": "chapter",
+      "sha256": "25d9c8835145e9a54f53215ac5729a15b9747ecab56c38e513a3f21d1ae5716d",
+      "gitBlob": "845c241fcf7287862a6d82d05f3c9c2a347e3553",
+      "bytes": 64320,
+      "chunks": 20,
+      "matched": true
+    },
+    {
+      "path": "book/11-程序员和技术人容易踩的红线.md",
+      "kind": "chapter",
+      "sha256": "508c7f178992c7fe6edef732d09072e9dc151fc8bed91f993806063e91043a0f",
+      "gitBlob": "14b7a7859c5061044db7f433ec7c13b97ff9d9df",
+      "bytes": 67219,
+      "chunks": 20,
+      "matched": true
+    },
+    {
+      "path": "book/12-创业与做生意.md",
+      "kind": "chapter",
+      "sha256": "3352602c7e265c6c4f722f8953a387e1f173ac483539fb58314822f1705252ae",
+      "gitBlob": "c889575c075bda36c888a3aa7a89b886a4a6dfeb",
+      "bytes": 94438,
+      "chunks": 25,
+      "matched": true
+    },
+    {
+      "path": "book/13-紧急情况.md",
+      "kind": "chapter",
+      "sha256": "54d94a685802c6a7f417b548f2d61f70ed68d628bbd875350a385c99985125e1",
+      "gitBlob": "fc9767ba7303c56ebc1f65b21a49c645d4257969",
+      "bytes": 178960,
+      "chunks": 58,
+      "matched": true
+    },
+    {
+      "path": "book/14-账号与信息安全.md",
+      "kind": "chapter",
+      "sha256": "3424a8a840d4c95aa1b1158ccc5442c0fd48b54b1e2398cf620929cc81a020bc",
+      "gitBlob": "b797a9d88ef79031157f4b47179297960a0a6fbf",
+      "bytes": 29706,
+      "chunks": 8,
+      "matched": true
+    },
+    {
+      "path": "book/15-租房与买房.md",
+      "kind": "chapter",
+      "sha256": "74d698cc7959cc4dbd3abbaa9f7931168524129a32772433d9249eaf1bbccb82",
+      "gitBlob": "f4065e99afbda9119aacf505f3e0fe12fdf46dfc",
+      "bytes": 47755,
+      "chunks": 14,
+      "matched": true
+    },
+    {
+      "path": "book/16-得了慢性病之后怎么活.md",
+      "kind": "chapter",
+      "sha256": "fae37af1a752df4a5045d8bd57a21da8a87a42e69479a3c036090fcb296d7c2b",
+      "gitBlob": "37ec9295d3c4e9c53bc043ce520ad4580d3e2789",
+      "bytes": 50071,
+      "chunks": 17,
+      "matched": true
+    },
+    {
+      "path": "book/17-家里有老人.md",
+      "kind": "chapter",
+      "sha256": "27ecc277bfe676d82d697c83f896fa9a42255944ed5a917ace81d26d4fc13257",
+      "gitBlob": "b2d90a7a0ef323acdd07378a96456d5b45e9357e",
+      "bytes": 45807,
+      "chunks": 13,
+      "matched": true
+    },
+    {
+      "path": "book/18-养孩子划不划算.md",
+      "kind": "chapter",
+      "sha256": "00c50a53ebc837b02d93d1399fb1ab2cba8704b13ce02cd5029d62c6defbea7f",
+      "gitBlob": "66bfb98b3740b8a0535d7422992abef7edb91dcb",
+      "bytes": 18077,
+      "chunks": 5,
+      "matched": true
+    },
+    {
+      "path": "book/19-在职离职和工伤.md",
+      "kind": "chapter",
+      "sha256": "ffc8deaa489ea4d490ecb60c18025cf0257616becb06fd994b14e26fb7041314",
+      "gitBlob": "599986676204301a612897d415af0854b6088e65",
+      "bytes": 81976,
+      "chunks": 21,
+      "matched": true
+    },
+    {
+      "path": "book/20-刚出生的孩子怎么带.md",
+      "kind": "chapter",
+      "sha256": "296d2c8f96595f2721549eaf791e989fbe0ebd7731344e1056b1d6e4da702a0f",
+      "gitBlob": "a4ec4d0bbe8bb488854cf25914015b8c6f0f302a",
+      "bytes": 52786,
+      "chunks": 17,
+      "matched": true
+    },
+    {
+      "path": "book/21-出国旅行与境外安全.md",
+      "kind": "chapter",
+      "sha256": "7326b49cab0e623e30cf74d4e5675020447fd382a16d018d1b286cfa7e5a4369",
+      "gitBlob": "472b78f42e1102bd7ee3e50f660d7c22fd713373",
+      "bytes": 36097,
+      "chunks": 11,
+      "matched": true
+    },
+    {
+      "path": "book/22-怎么放松.md",
+      "kind": "chapter",
+      "sha256": "b8bc08ee90411b2ca35cc187a772ccded9c4518f06f31263bee2c9bf131b4dfa",
+      "gitBlob": "846b016a8b89dc1bc32ee5cac50d08ee36cefcb2",
+      "bytes": 33278,
+      "chunks": 11,
+      "matched": true
+    },
+    {
+      "path": "book/23-学什么技能划算.md",
+      "kind": "chapter",
+      "sha256": "c46d87ab074397b9c99125e50622daf1db83d20c83b18e4eb51a55cfc11ef9d7",
+      "gitBlob": "af9bb54c758cde215fd89246977c17716f365d09",
+      "bytes": 67421,
+      "chunks": 21,
+      "matched": true
+    },
+    {
+      "path": "book/24-看病.md",
+      "kind": "chapter",
+      "sha256": "297297bf673c65c761ec13642fb1bae6d01af9943ee8e1d4af2f2e5160765b82",
+      "gitBlob": "34498df5462ef22d7657844dc159482f6613353d",
+      "bytes": 48794,
+      "chunks": 14,
+      "matched": true
+    },
+    {
+      "path": "book/25-人走了以后要办什么.md",
+      "kind": "chapter",
+      "sha256": "162d5c0d2d1e129c113315b924267bafb76738c11aaee0227c2e3de0275927c3",
+      "gitBlob": "c5ca0649721b3113aeffb36f1a44205772a6d508",
+      "bytes": 34834,
+      "chunks": 9,
+      "matched": true
+    },
+    {
+      "path": "book/26-做一个网站或平台.md",
+      "kind": "chapter",
+      "sha256": "6f12f3582d2c9da6c4dd57cd228fcf52ad81dc1c9ebb0abebd13db81a4679aca",
+      "gitBlob": "21b84586e086b31106bfec932e416586b0448479",
+      "bytes": 42079,
+      "chunks": 12,
+      "matched": true
+    },
+    {
+      "path": "book/27-怀孕和生产.md",
+      "kind": "chapter",
+      "sha256": "7f43af84e2afab01d23fada4db7b8c982885c8a9faaa121d86f4a280da0b49bb",
+      "gitBlob": "c600f9d4937cd3e3510487d540d942e15afd5b32",
+      "bytes": 52747,
+      "chunks": 18,
+      "matched": true
+    },
+    {
+      "path": "book/28-别为了外形把身体搞坏.md",
+      "kind": "chapter",
+      "sha256": "c48042789962c73cbe6b09e8863ecd8ba152412b99ca5eadfdf6a9ad417e0e17",
+      "gitBlob": "98e52e4cfda5a873907d215fa4fb3dd48f3f5514",
+      "bytes": 32899,
+      "chunks": 11,
+      "matched": true
+    },
+    {
+      "path": "book/29-遭遇重大打击之后.md",
+      "kind": "chapter",
+      "sha256": "d4c0692e2f0f905ccdd8086a747fb333966866d34ec54e74613ea3ff2ad22b44",
+      "gitBlob": "09e69a047f685b845a77282a56c2ec88876aad74",
+      "bytes": 44031,
+      "chunks": 13,
+      "matched": true
+    },
+    {
+      "path": "book/30-上学以后的孩子.md",
+      "kind": "chapter",
+      "sha256": "a3c40ca3364715621780c06b39f853b5a588993bc41948df9c2444ca85f901b5",
+      "gitBlob": "0867e2200eeb747ccee896daf13e48fd066954f7",
+      "bytes": 70601,
+      "chunks": 23,
+      "matched": true
+    },
+    {
+      "path": "book/31-十八岁之后有哪几条路.md",
+      "kind": "chapter",
+      "sha256": "d8cd492105f2a1ebd87948439d3043294ab01c1e1f8149ac682f0089f4665c2d",
+      "gitBlob": "1dcae35a2070f3f5c2ec1e9545e3ba6c445b2a79",
+      "bytes": 78273,
+      "chunks": 20,
+      "matched": true
+    },
+    {
+      "path": "book/32-出国留学.md",
+      "kind": "chapter",
+      "sha256": "8992babffb2c7f7d53a623dbce4e8d02c048dcb74be9a358adba537a3cb29555",
+      "gitBlob": "c3f7cc411775ff5c63aef689281677f740e0ed99",
+      "bytes": 28092,
+      "chunks": 9,
+      "matched": true
+    },
+    {
+      "path": "book/33-残疾之后怎么活.md",
+      "kind": "chapter",
+      "sha256": "f3fe62f615934a087bb54ccd2e2fe76d369b6894fceb5cfb7490976de372e7c8",
+      "gitBlob": "1dcdcfa7070745de120002130d08436cc5604de4",
+      "bytes": 65263,
+      "chunks": 20,
+      "matched": true
+    },
+    {
+      "path": "book/34-家里的常备药别吃出事.md",
+      "kind": "chapter",
+      "sha256": "fbf360640029d131794199cf28e6c43d8580246a7b40880821400169f5ec5f1e",
+      "gitBlob": "22a1944a6105c2ee68719ce00d6aa0f7e42f3c0f",
+      "bytes": 46361,
+      "chunks": 16,
+      "matched": true
+    },
+    {
+      "path": "docs/做平台要办哪些证.md",
+      "kind": "article",
+      "sha256": "62505e083bda214e75a5ae18796c045253c5176241090a167e0e494579b0055b",
+      "gitBlob": "8f615af66aae0f793c08dcadd4d224a8363d5f5f",
+      "bytes": 10229,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/刚确诊慢性病之后.md",
+      "kind": "article",
+      "sha256": "d8fc7e8a15ef66418d713913be66475f19f379ac379172a52c77648f1f868f53",
+      "gitBlob": "4c84fae18092214cceb5feff97307343a86928f8",
+      "bytes": 6488,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/孩子出生前后要办的事.md",
+      "kind": "article",
+      "sha256": "0e421bb812e63f86805ece55d229e165c3375507fd1d85de9381036e47e2e110",
+      "gitBlob": "362895934d1ee1965a8dd714dd43b87b02d2cae0",
+      "bytes": 6151,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/家庭应急装备清单.md",
+      "kind": "article",
+      "sha256": "59ae4e7b2c4f163775d07d0cf222f42a8c7360ef7226a10095368901d44291d1",
+      "gitBlob": "659f3004f1c69a1bce139dbfcd7f299b2444377d",
+      "bytes": 16642,
+      "chunks": 5,
+      "matched": true
+    },
+    {
+      "path": "docs/引用对照.md",
+      "kind": "reference",
+      "sha256": "49f5c9348244c780642421e1e24653c73811d415e8db780d3b76be064134cf41",
+      "gitBlob": "3ce62628fd237763aae6fa3259b755e359e98a08",
+      "bytes": 370946,
+      "chunks": 92,
+      "matched": true
+    },
+    {
+      "path": "docs/换工作、换城市之前.md",
+      "kind": "article",
+      "sha256": "a7bbb05fd55dff021fa1a45ec896858fcd5d153bd49b92922156dff798d5ab0c",
+      "gitBlob": "2f67d12f8bc633de13ecfb50d9c4027caa9f86c6",
+      "bytes": 12218,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/01-不要早死.md",
+      "kind": "verification",
+      "sha256": "9a7471bfd49bfdb23c8e55851a654bb1d0cc1e0e9f10f81a853e8ada7b824f76",
+      "gitBlob": "be65e4afaf9e00e010aac91d5bcce2ceb1a7d9a8",
+      "bytes": 14110,
+      "chunks": 9,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/02-不要慢慢死.md",
+      "kind": "verification",
+      "sha256": "880e0b4f65cc37be39266c79c5c655276d0911fcd1623cadc71f918323c1c8b1",
+      "gitBlob": "fffe3846cd215dfa44c2b20a06576f63c5d6e553",
+      "bytes": 17817,
+      "chunks": 11,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/03-不要浪费精力.md",
+      "kind": "verification",
+      "sha256": "2d11ab4d31fddd120424066e547c41707e7c3f7b5e3b8a8d6040a52c03584294",
+      "gitBlob": "97f8e7d0a8657925788c86e4d028fc400046d6c2",
+      "bytes": 18998,
+      "chunks": 11,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/04-不要浪费时间.md",
+      "kind": "verification",
+      "sha256": "a634678d1f9537cec321c1c2bc7bc823da4e3e895d21762e27ca942e6d8580a4",
+      "gitBlob": "68f789cc5c40d421483638f3c6d3939e0dd2de3c",
+      "bytes": 15455,
+      "chunks": 9,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/05-不要浪费钱.md",
+      "kind": "verification",
+      "sha256": "80141bad3aa24e79bd7864d797e1919bd8d75609735c6d881d93c5fdcd9cb010",
+      "gitBlob": "fa65cb5894bb4a5f1727e3cc075ab8f2326291ae",
+      "bytes": 19991,
+      "chunks": 8,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/06-反面清单.md",
+      "kind": "verification",
+      "sha256": "a3228b3318e5fe61850d4265db4e7f9aa1ecd813d3bdf0ae7b4efa18a6b314c5",
+      "gitBlob": "9bb5f57373dd2b4650325d39f9b985a77eec4eca",
+      "bytes": 17548,
+      "chunks": 9,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/07-劳动仲裁条重写.md",
+      "kind": "verification",
+      "sha256": "6577ddc9417493a78c8409c1a5401a1f7f4df1a2866abaa91411a5f765bf7f08",
+      "gitBlob": "e53cdcbf6c9c2160e9f87ab93e87da45a1e2a330",
+      "bytes": 11621,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/07-没钱的时候怎么活.md",
+      "kind": "verification",
+      "sha256": "61df1b2bd9238a175b58f9451a7cd8c308d6c135cead993404cab782a2a8dada",
+      "gitBlob": "ecce059cc336b87e8f7a83f7b73aa30798452670",
+      "bytes": 23611,
+      "chunks": 8,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/08-别把自己搭进去.md",
+      "kind": "verification",
+      "sha256": "f081795bea51df07ff16f31cf2c77d5bbd11dc51ceade4038e80a9f06d963299",
+      "gitBlob": "233e35fee37c37762782d8594ee3ed8772fa0d43",
+      "bytes": 24580,
+      "chunks": 7,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/09-普通人容易踩的法律红线.md",
+      "kind": "verification",
+      "sha256": "df7b092a124a6295cfc819f668f830c1d122ab4ab3f28cf0550739a956d369a6",
+      "gitBlob": "f42547602337544de8591df9605b12df7caf509f",
+      "bytes": 24445,
+      "chunks": 7,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/10-21-23-恋爱出国娱乐减压与技能.md",
+      "kind": "verification",
+      "sha256": "a5c674565a64d882d32e9f916f6cbef52dc7d382ee9436444be1e8c2abe83297",
+      "gitBlob": "fe5acd35bcebfa013dd4d8bba06ee84735eab2f9",
+      "bytes": 21418,
+      "chunks": 8,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/10-结婚划不划算.md",
+      "kind": "verification",
+      "sha256": "fc7b1711b0420cc5d19ba92992aac6966c922d3681105b0da473d3be3ccae943",
+      "gitBlob": "ae55020fc130c2dfe398a8b1d0acd4d2d31f0ec2",
+      "bytes": 13520,
+      "chunks": 6,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/11-程序员红线.md",
+      "kind": "verification",
+      "sha256": "86897ae767aa381a7fbfa8f6a8585de8a32bd39160260d618f7423b4df7f253a",
+      "gitBlob": "0bb9b17c42c93c854a9b5b765e61183c5faada09",
+      "bytes": 24376,
+      "chunks": 7,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/12-创业与做生意.md",
+      "kind": "verification",
+      "sha256": "28b21a83d7263e691a52470ce5ba92a600486249481df008542b36bc49ec3538",
+      "gitBlob": "e515d89c437ee7866d5d4b7f7dc3606900220395",
+      "bytes": 23000,
+      "chunks": 7,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/13-急救与野外补充.md",
+      "kind": "verification",
+      "sha256": "514062beecf90c1f060954662f6580d98dddcc4a5b64f1f9265acca7d71d3331",
+      "gitBlob": "af7ce4e9696309518766367c8f052435967555a2",
+      "bytes": 9301,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/13-紧急情况.md",
+      "kind": "verification",
+      "sha256": "f0e23003e1e187c79a8e6ed524ed3f1373abc8fdd19de02c9ab27c0b1dd8ac96",
+      "gitBlob": "1f8eaab5d042f5d0022f843175239452035876bc",
+      "bytes": 23702,
+      "chunks": 10,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/14-19-新增章节与HowToLiveLonger合入.md",
+      "kind": "verification",
+      "sha256": "110fe624dba9315a18f14dd096a90ce597a287872f4fb7b5f9f9ea375fbc0b9f",
+      "gitBlob": "bc21b71788153a7d4f96f67e483aa959f1fef3b4",
+      "bytes": 12682,
+      "chunks": 5,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/19-工伤.md",
+      "kind": "verification",
+      "sha256": "1759f014080d2f05809cef59e515d2678627ee6012658129cf130fcd2d8cd350",
+      "gitBlob": "857e85e0cbe59caa8d4fee1d3921d1b4c21326bd",
+      "bytes": 5290,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/24-25-看病与身后事.md",
+      "kind": "verification",
+      "sha256": "479fff09eaee7f5cc42f9d844daa9f33a30fea2dceb394044da56f461f0c9bcc",
+      "gitBlob": "ab928c9743ebf6b01b9026b57eb8902b07487d97",
+      "bytes": 7370,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/27-怀孕和生产与艾滋病预防阻断.md",
+      "kind": "verification",
+      "sha256": "3f60cd0414ccc9da4cd06872c0e1d7d076470f3efb252769fc4ee8ec06232747",
+      "gitBlob": "bb558e2efe80c114bfae5c4adb5d45a63b722088",
+      "bytes": 16679,
+      "chunks": 6,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/28-别为了外形把身体搞坏.md",
+      "kind": "verification",
+      "sha256": "a082f40c49169d7b73b34b5f367a598a16a0b229bb1e293233a5daa0637bbf9d",
+      "gitBlob": "fcceff58b04294691169bbd0927274c290306cd5",
+      "bytes": 19661,
+      "chunks": 8,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/29-遭遇重大打击之后.md",
+      "kind": "verification",
+      "sha256": "32e5c63decb366e83f5075aac9ad4c980cb34e0fd8ebe91cbd802e73869ac709",
+      "gitBlob": "0f575b196481cff615408e6b41bfc0b9c6f3c5ca",
+      "bytes": 6797,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/30-上学以后的孩子.md",
+      "kind": "verification",
+      "sha256": "bbfc2b41ec4cd6e9b17096e9421326ef40c21dbcc6dff57bbf7c22e831ee0845",
+      "gitBlob": "6040e4627d5c37b5cd1221df62aff0ec3a994b08",
+      "bytes": 7367,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/32-出国留学.md",
+      "kind": "verification",
+      "sha256": "f531beca544f7bdfeaa0c402e726d6ba7e85b11665023cd65469077c1c9ce5bb",
+      "gitBlob": "b841d71263be9fef6d8c8f43bfbdf4a3855ca87a",
+      "bytes": 13281,
+      "chunks": 5,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/33-残疾之后怎么活.md",
+      "kind": "verification",
+      "sha256": "cdcc8fc14a8f2d7fc34df1879205739bfcbeaf2fd3fbdea4122b2f171c116b8c",
+      "gitBlob": "e48b1c2ab0d20f69d9526004e6e597173f2226ec",
+      "bytes": 15973,
+      "chunks": 5,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/34-家里的常备药别吃出事.md",
+      "kind": "verification",
+      "sha256": "68b74c8f64404ad91a440976a026489025b41d761e9bbd55ca3b0fe723723f40",
+      "gitBlob": "429368b65fc8856e6eeb509bb0bbaf9a5ba32dd8",
+      "bytes": 9243,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/人群标签.md",
+      "kind": "verification",
+      "sha256": "8d9da69d1c6f2e2c443a8775d0beb16edb2e5721882c0d1e711cf148fbf515c1",
+      "gitBlob": "d177198e2fbdd201a316026372095e19677616ea",
+      "bytes": 5785,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/全书审校待核清单-2026-10-14.md",
+      "kind": "verification",
+      "sha256": "dd5387a993ca5bf8b518f8fd39df09efb852e2ee60819c1537ca9756f6e6039c",
+      "gitBlob": "db4e6ffaa31ef526486473b8f67cd88e5d88a0a7",
+      "bytes": 6012,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/口径变更-受益人分四档.md",
+      "kind": "verification",
+      "sha256": "94e1a66a0fdb341b1efd580b13d310da3c1e201a364c76186f871798200fadfe",
+      "gitBlob": "c28789e3e806795e19b4dc1cf5bd3b4c9b1778a9",
+      "bytes": 5339,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/待核清单处理-剩余医学四处.md",
+      "kind": "verification",
+      "sha256": "7dd6786768e73b5359897e1d39e3fc6516373d11cb10c2d789c8a8a7e92452d1",
+      "gitBlob": "5c9d61eb02f85b767707c7abe27dcfd18e29bae5",
+      "bytes": 7723,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/待核清单处理-剩余法律三处.md",
+      "kind": "verification",
+      "sha256": "f17470aa490df87872afff4ed63bc49a78ce6487d8c78502b079ba7ef317d83a",
+      "gitBlob": "eee6409777040d1ba32f511836a66bae916c236c",
+      "bytes": 6524,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/待核清单处理-第11、12、14节.md",
+      "kind": "verification",
+      "sha256": "59c668bd0ebb302fc5c0d0403445a31c95b3f44ca7da74535db076bfba075c53",
+      "gitBlob": "34d21e28de6bf3edf780091a0fb93c60a2d77ace",
+      "bytes": 13540,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/待核清单处理-第13节.md",
+      "kind": "verification",
+      "sha256": "3a77766d617340aec8d8240898618a43507ea66d709ee7525783c757c7763da3",
+      "gitBlob": "d453662f0cb502e0c03eff17e62c0403a09c4e80",
+      "bytes": 20096,
+      "chunks": 7,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/待核清单处理-第15、16、17、18、19节.md",
+      "kind": "verification",
+      "sha256": "c9c64bb4ad5c0a1f910f7642135942c798ee2d21bc49e80be599372b70218768",
+      "gitBlob": "58f6b0e14b6d183096225646a0ea939cd9d1584a",
+      "bytes": 13498,
+      "chunks": 5,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/待核清单处理-第1节.md",
+      "kind": "verification",
+      "sha256": "82acd54802bd615db1a923ae2e19bc0bcc2684de48840be256148938064a1419",
+      "gitBlob": "1e39221db51f6264808665c3d5d066ccd8227afc",
+      "bytes": 23665,
+      "chunks": 9,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/待核清单处理-第20、21、22节.md",
+      "kind": "verification",
+      "sha256": "3d8c1254170b55fa37ea8b086c57296aec29d34fa01d92ba1d5919719ac7ef37",
+      "gitBlob": "c76c378c7bd98037dc916f5e8891612111e057d6",
+      "bytes": 13077,
+      "chunks": 5,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/待核清单处理-第23、24、25节.md",
+      "kind": "verification",
+      "sha256": "7832f4c2218fc88af59945e7e2e4d597195733d7709853804bdf1bf1a495f995",
+      "gitBlob": "2a03dd3154545db792d648f1f64e0f2e38292292",
+      "bytes": 10256,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/待核清单处理-第27、28、29、32节.md",
+      "kind": "verification",
+      "sha256": "7d5dd032473d397e40568a5700ab1dae427003c16ce69fe29d552de14d2dc1ad",
+      "gitBlob": "81c4cd3c3b11b47ad400724f74f74f6bf7e43895",
+      "bytes": 17911,
+      "chunks": 6,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/待核清单处理-第2、3、4节.md",
+      "kind": "verification",
+      "sha256": "2ea62d43a53cdb31e6428d1114250b9504eea1312f1934e138a5fd57886d9c4a",
+      "gitBlob": "72dfecc0017d14cb1e7f3d051a75f6027500c38e",
+      "bytes": 15330,
+      "chunks": 8,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/待核清单处理-第30、31、33、34节.md",
+      "kind": "verification",
+      "sha256": "2e0f2e6fdd38f9834cf29b9b83f0c274bdb2f1920e9b8e7ae64cd292978ec547",
+      "gitBlob": "be3bb6f13a0aa818fc63a0162a2b25d94d835575",
+      "bytes": 22665,
+      "chunks": 8,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/待核清单处理-第5、6、7节.md",
+      "kind": "verification",
+      "sha256": "87a20ce360d27909020ff4aac0da65b3c4323291c97911de59a1ed4da12bab91",
+      "gitBlob": "1acf466ab7874d37be93dd988cb53e78ab2268ac",
+      "bytes": 12327,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/待核清单处理-第8节.md",
+      "kind": "verification",
+      "sha256": "41cf908f161e5c73891b4a7f422bac3e8609cedd417180244a51887722ed950c",
+      "gitBlob": "cc65a022c14b0bef773f9b70b3d21081b00b2cc1",
+      "bytes": 8264,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/待核清单处理-第9、10节.md",
+      "kind": "verification",
+      "sha256": "fc38d3cb4852a7fd15fa4cdfd7a9a49be170c784a2875c8b2e636f6eddffc280",
+      "gitBlob": "c9e79eb991365ac73e56f5d06ff1b7cd241d2da1",
+      "bytes": 12116,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/性取向相关条目.md",
+      "kind": "verification",
+      "sha256": "3f3b4b623267f793a753ec69f1b3515a1a4d8233ea3922e928a8d711765318df",
+      "gitBlob": "7d29ada92dcec35510e679f097a7b3bfde6ade3c",
+      "bytes": 8257,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/排查-只给禁止不给出路.md",
+      "kind": "verification",
+      "sha256": "4a6a639593cb2ac63c3f86b8a7f396c68e3c36f660b288517cc76a74c313c607",
+      "gitBlob": "2cc1f860c9c168414c431081da783ee82a8ae0fa",
+      "bytes": 5005,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/排查-备注里的文献链接.md",
+      "kind": "verification",
+      "sha256": "5095224e5638a012eda9a0698f1ea8e42bd6fd724c613c16abc5c5f3306b24ba",
+      "gitBlob": "7739465b551ec569c9a5d9335f6e34249d808193",
+      "bytes": 3914,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/排查-说人话栏与收益栏对齐.md",
+      "kind": "verification",
+      "sha256": "f82748cce97fa76e31e8b38a33a15b24c267a1b81c2da8db969ebcddf5658c82",
+      "gitBlob": "f9cd791ea8507e9c04c0453389dc915a17af3546",
+      "bytes": 7182,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/新增-第31节十八岁之后有哪几条路.md",
+      "kind": "verification",
+      "sha256": "c81f5445a26a7b7befb37e522b257eb47e81bb3bf93458ebeecaad361aa168b2",
+      "gitBlob": "aeac1f776ac909ec914c65e2ab08ec7fc250baea",
+      "bytes": 28181,
+      "chunks": 9,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/纠错-2026-10-21-个人养老金.md",
+      "kind": "verification",
+      "sha256": "62950590879c29a487d5db99b24ab4701a9c2a04c161c1ef79b8ee1e72595cd7",
+      "gitBlob": "70c30a7ff2b4ef889c66a1ef9407d1674892f7e0",
+      "bytes": 3452,
+      "chunks": 1,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/纠错-2026-10-21-乙肝与有限空间.md",
+      "kind": "verification",
+      "sha256": "269aafd6db660ded5e12b3564945a7e7be80d34c189e82329ca498e3300e2708",
+      "gitBlob": "4214da523a45824acaeb247007c6f658d90d6854",
+      "bytes": 4191,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/纠错-2026-10-21-急救与防卫.md",
+      "kind": "verification",
+      "sha256": "11bdc68bf869201c70bad01a1113f94bebf3ef0e8bfc0ce4dad6e2c024ba6dda",
+      "gitBlob": "d96d83b4f140c4c48faab8f34932b00045653ec2",
+      "bytes": 5847,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/纠错-2026-10-21-生活自查.md",
+      "kind": "verification",
+      "sha256": "398f9bdb716f62825229d45f76170b9d9e98ebb794893050cd437e7a881b2945",
+      "gitBlob": "1f76aa99c16738b43b247222195b8efdc68401b8",
+      "bytes": 1742,
+      "chunks": 1,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/纠错-2026-10-21-留学工作条件.md",
+      "kind": "verification",
+      "sha256": "2e435429b756402103964dd191d0d5e423a9b9e0ffc5a014486275a38ba397cf",
+      "gitBlob": "2db1ed5b4510a606b91d5dcd26ead7868e5a80b8",
+      "bytes": 2437,
+      "chunks": 1,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/纠错-2026-10-21-落户与接种.md",
+      "kind": "verification",
+      "sha256": "82fad4a5a037ba31b028dae4f2fef324406a241886a41ec6c68900cca4a289b0",
+      "gitBlob": "1cc96d65d83dce4b4ceec5b2e784e6663d0f4706",
+      "bytes": 1289,
+      "chunks": 1,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/纠错-2026-10-21-食品标签与申报.md",
+      "kind": "verification",
+      "sha256": "7f670edc3ba93f58540acc127cd006e6eb1733de28caa25b6787101bc5389d78",
+      "gitBlob": "bbab5e49f4c06d3c1dbea64271199b4c81490768",
+      "bytes": 3795,
+      "chunks": 1,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/补来源-第14节.md",
+      "kind": "verification",
+      "sha256": "1b61735520fe45fe4e2c740ce8ea46733a635d01b6a88d7ac2e96751e3479239",
+      "gitBlob": "d92b106a6a678da215ed79da3bd343217240fff6",
+      "bytes": 5625,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/补来源-第16节.md",
+      "kind": "verification",
+      "sha256": "07e6b912402f3761816aaf9ad669bfc4b26171c7c780610a92ad1e64b1a6c786",
+      "gitBlob": "169dc1a3119872de0186ccf20601b01e357cf796",
+      "bytes": 7307,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/补来源-第17节.md",
+      "kind": "verification",
+      "sha256": "c13685791f4c95fe91f0814a99bfad33b65290087f380cc8b95dade24a469bf0",
+      "gitBlob": "ced3de46a6b0dc17c0dc16320f77b103c554cc79",
+      "bytes": 7006,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/补来源-第19节与第20节.md",
+      "kind": "verification",
+      "sha256": "d09d65867a420367678cc30603efe939dae99463418673a5bbf99b8380f4ddfc",
+      "gitBlob": "53568cedeb1f6f34dbd9429cb628cd0ecfb4c4be",
+      "bytes": 11491,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/补来源-第29节.md",
+      "kind": "verification",
+      "sha256": "053903a7ecf7174de099b1d40d3e75eb9045c4d30b45b5c0dc5a808e3a7ec006",
+      "gitBlob": "ce1b47ce274440c1e02ef5c80bd1a511b6957fa7",
+      "bytes": 4051,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/补来源-第7节与第15节.md",
+      "kind": "verification",
+      "sha256": "3913f2cb72b21f4e7e4a98d229aec9c51927c093e5c647f27cb3f1203d786099",
+      "gitBlob": "8824f05400cda255d00f9272bc97dc92965b4a1a",
+      "bytes": 11610,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-AI幻觉.md",
+      "kind": "verification",
+      "sha256": "4545c4fe0a62a7806f4cfa85402767291908c07c48f186962ba0fcabdc9851d8",
+      "gitBlob": "df3d9cb1f535f6f0658e4b602d3f9ee928f2b5f9",
+      "bytes": 6231,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-AI换脸拟声.md",
+      "kind": "verification",
+      "sha256": "745535d24eb2883a7fd654bdd380b87119661109dc36f8244a1955b114644489",
+      "gitBlob": "d73bdb11f5904ef0e6926420d63dd0e6983b1b75",
+      "bytes": 5860,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-App备案信息泄露与自动续费.md",
+      "kind": "verification",
+      "sha256": "4a21eaa4aa278c8b502ad1800f79aa53eebb9882d4f4b71d46fdb472f42872f5",
+      "gitBlob": "90676413f6ad6da158050a42e2ffff5ee380547e",
+      "bytes": 9764,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-OPT失业天数与加拿大省级证明信.md",
+      "kind": "verification",
+      "sha256": "1022f2929b74ce6a551ab91426ea7a3a1bf2fe8850e99542204741265a95e16c",
+      "gitBlob": "4fd2f346a81eb3f319bd640f21cfc284fdab05eb",
+      "bytes": 7651,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-issue112年报与企业所得税汇算.md",
+      "kind": "verification",
+      "sha256": "47701f6051759208eee5f381e05bd4610f0f01e592ba1adb8fa40bc3897103c5",
+      "gitBlob": "905a359e5d4980de2d4c24dd1531a4ee1d6f02e7",
+      "bytes": 9529,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-issue28八处补来源.md",
+      "kind": "verification",
+      "sha256": "80370c14cd85b90b3e3ec71508c8ace42e41a57e4a247e88478a6f739378d133",
+      "gitBlob": "c8cc302614801e3ca7c0ca4d079f10e12208abbb",
+      "bytes": 5877,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-issue30国家赔偿免责与录音拍照留证.md",
+      "kind": "verification",
+      "sha256": "209c2861ee6d35acb5c94468e7ad2588b220b21664b2b061da13daac36732da0",
+      "gitBlob": "ddc517a8d446fe19feb9030a2fa60868f1c5e7ec",
+      "bytes": 4127,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-issue31情绪疏导家暴与职场欺负.md",
+      "kind": "verification",
+      "sha256": "24831fca3d5122c5557b8a672683de947215c0f9cd87b90a42134b69f98bdb07",
+      "gitBlob": "5904b25ec823e26d7821573033060f36df9247b6",
+      "bytes": 5985,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-issue37职称.md",
+      "kind": "verification",
+      "sha256": "4752321e3d2ba5050848b9ad8fe0a9e606edf0f3a6a5d7ca75ce16e135937f85",
+      "gitBlob": "6e2dd6fca079ce30300f82987255cc91bbdbdc63",
+      "bytes": 4941,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-issue41境外投资渠道.md",
+      "kind": "verification",
+      "sha256": "4a358753e63d64ed684cb511ea88948a1480a6db60fd4a0fe479ff1942a44003",
+      "gitBlob": "02cc70652a8113f09a26e9ebdc74fd7e2b65b4b5",
+      "bytes": 3926,
+      "chunks": 1,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-issue44降尿酸药的选择.md",
+      "kind": "verification",
+      "sha256": "8cac127d71389241e9c8263cb8a07894bddff7ceb697c5979db53db0bbff48b3",
+      "gitBlob": "174c9b83c0d647aa0b7209015fdb2c20b20ea758",
+      "bytes": 4439,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-issue57约会安全.md",
+      "kind": "verification",
+      "sha256": "341814065b657be614667670b21aeb383ba9160fe7f1a0a902b74f5fe0ecb1ff",
+      "gitBlob": "e6759ff00fb92829b462884dda3d1b8665a3b13b",
+      "bytes": 3575,
+      "chunks": 1,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-issue60给个人干活被欠钱.md",
+      "kind": "verification",
+      "sha256": "3e1f88ad87fce985c6224b8f429e9f5bc9837d1a492d2e74a6fd59bf5077c10b",
+      "gitBlob": "609fff30f2663c3b748497de37aee4c3c3220815",
+      "bytes": 5024,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-issue61推理问题.md",
+      "kind": "verification",
+      "sha256": "f73a113d3ebf009b384a56ff635be012ed5d5442161fac268c130707b1be986f",
+      "gitBlob": "6e13926a2dec78236cf9c2994877b218aace0e9e",
+      "bytes": 3285,
+      "chunks": 1,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-issue64AB贷与按指印.md",
+      "kind": "verification",
+      "sha256": "ad24737d5029786981970d5d382cbe79896fdc6e1cc76856408e877ba6c0f6a7",
+      "gitBlob": "b68eefbd1165ac94c797e9797e627cfe1bd579bf",
+      "bytes": 13313,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-issue64创业骗局.md",
+      "kind": "verification",
+      "sha256": "f9b1e126ebcb4f350f6c29396a515c19a88927af463007de66394d68041a3366",
+      "gitBlob": "c7624ed17b413f2316c010a14e127775bfc9ffdd",
+      "bytes": 7706,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-丙肝.md",
+      "kind": "verification",
+      "sha256": "d51db38ed4316ab598ca5ce0e89969f624211d77da2363f6badc9eb804434fa6",
+      "gitBlob": "986be6c020bf6564221887a6a879331ff3cbca26",
+      "bytes": 13572,
+      "chunks": 6,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-乙肝随访与慢阻肺.md",
+      "kind": "verification",
+      "sha256": "73c6f48a35be98cc7eb5fd5b6568fe56647be2a4c19986d6fa595da9943cc425",
+      "gitBlob": "3e6625ab86faf6f1a416700da00aab3e8fd7f832",
+      "bytes": 10381,
+      "chunks": 5,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-买车.md",
+      "kind": "verification",
+      "sha256": "aba8049845106ca1b9596ea667b83bd26ec1b40c423fa6bf7f0d7f6564962451",
+      "gitBlob": "6e07e349f6b41d0823f5cd4e315025d86bd18c16",
+      "bytes": 7957,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-互联网复诊与住院费用清单.md",
+      "kind": "verification",
+      "sha256": "fa681080544584bba03c740f2f6051ef791fc3bd58ebfc3e4e8ac46b1cd29f1e",
+      "gitBlob": "5a08e139a403af26a95082f84cef4c2885517fcb",
+      "bytes": 9557,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-低保边缘家庭.md",
+      "kind": "verification",
+      "sha256": "317a6a67f23c1f8d9406df28a3ee41e1cbd5d4d82d446252b41031cb35280102",
+      "gitBlob": "f41d784424edd151c4561427f478efa8a9e5dbc8",
+      "bytes": 6362,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-保护植物.md",
+      "kind": "verification",
+      "sha256": "7c225fd858f07380fe9a955decbe97edd0ff693227f0ab399edbe6ddd87f1530",
+      "gitBlob": "3ff535c34484e994e6fd4cabd3efcb4f59b59f5e",
+      "bytes": 6433,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-保险六条.md",
+      "kind": "verification",
+      "sha256": "5610d3ec03a7941ad04012efbcc0f40167fbd1a9515d6f97d1e5f7767e6c8eeb",
+      "gitBlob": "fdf6b2ac302d37ea9b9b1345309528247f41f891",
+      "bytes": 6840,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-免责条款越界排查.md",
+      "kind": "verification",
+      "sha256": "0cc137d9dc3b53debdb057615c2109efd74ee5821296bd5a633b33a5bf39e45e",
+      "gitBlob": "44b79cde6a0a8f95855f139fa6449e141e72c562",
+      "bytes": 12720,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-公积金贷款.md",
+      "kind": "verification",
+      "sha256": "06cc16a11600013a0966f1fb44182b1e44470aa9fc099b3a44a4a23630151686",
+      "gitBlob": "c39f3a8e972115d3d25d26d72262473c0905c2ca",
+      "bytes": 8932,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-养不了孩子的合法出路.md",
+      "kind": "verification",
+      "sha256": "685e982e7409f78d8cd5b00c7ab16ca28d08fe42454920e428f9b1b2ed2e3cbd",
+      "gitBlob": "073dd28dddd46d38fc24b570ca4f1f3ab86f0651",
+      "bytes": 5172,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-养狗打疫苗和登记.md",
+      "kind": "verification",
+      "sha256": "9618ee95f159262994c7744e25c4c496ce2207799d77815ed837d096d3f75c93",
+      "gitBlob": "a35fe3ab2a8c683a91b1971d593190b6a06eb3d6",
+      "bytes": 4394,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-养老诈骗.md",
+      "kind": "verification",
+      "sha256": "f7606d0dc5e608abf3089382db6491d47b74a76f44e6a4b8b48e46bf3407d1ea",
+      "gitBlob": "246dac21118bb11e299788576a1aa18b16e72ac0",
+      "bytes": 8400,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-养老院护理假与记忆门诊.md",
+      "kind": "verification",
+      "sha256": "9a70313be6928e101c8c109a092ab7276be7b01c33ca84a3cc30446d4b894167",
+      "gitBlob": "9341f937f3ab7073fb2501fefd38591fe7db91ff",
+      "bytes": 11823,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-冲奶粉水温争议.md",
+      "kind": "verification",
+      "sha256": "7b67410690d286af4b62e00649409c35613e4e8464bb8c89eef6ce1ee868afa4",
+      "gitBlob": "824aa09aa9fb24239530a82773568ab6d3b9944f",
+      "bytes": 5049,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-凑钱租铺面与合伙协议.md",
+      "kind": "verification",
+      "sha256": "2f436fb75b35e507a75cbd7c87ed46c18e5c7e9354b5c8827bf71c5a686257d0",
+      "gitBlob": "9f93aa13df57c44555013cb75d5ec7099e6c0549",
+      "bytes": 12456,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-创伤后应激与心理晤谈.md",
+      "kind": "verification",
+      "sha256": "b7dc3fcb9f2996b42448c9470662d316290f8e6617dac27168167c1ab3e63191",
+      "gitBlob": "530be1cba37efeae426ab76c2290654b7dfe701c",
+      "bytes": 9721,
+      "chunks": 5,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-劳动合同双倍工资社保违约金.md",
+      "kind": "verification",
+      "sha256": "cd0d07ac1e5845feafa69c29b02a2c07e701c2f6c6596164d6a63b6673df6d22",
+      "gitBlob": "d7ea6fcfe6b377e1fa860fb6e25b4304b59bcdd4",
+      "bytes": 16244,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-勃起功能与嫖娼.md",
+      "kind": "verification",
+      "sha256": "f9e1e116a0d22a79defe3c20a9e832d60a44f07f721876ad5e74860b79f66ebe",
+      "gitBlob": "8031eaeeffc4c2fef77d37a1fcf257fbbd3fd7de",
+      "bytes": 8461,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-十条补缺.md",
+      "kind": "verification",
+      "sha256": "e80b23cbd5e2f4e6655dfdd40d1a51bf720c2b6a69c20fcf5aa58e775a8003f2",
+      "gitBlob": "e1f3b5d5897a339bb947e134357b51b0abf6073e",
+      "bytes": 12812,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-午睡时长.md",
+      "kind": "verification",
+      "sha256": "ee61301b63d26394baca7f6656919af6ce4602311f91b79f2a1b66fc348c9a43",
+      "gitBlob": "3faec0da42057c28c43d18c52930ae7e10b3582e",
+      "bytes": 5587,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-卖器官.md",
+      "kind": "verification",
+      "sha256": "394ad06e161dc71daf665ee59ad4ddc454c4f4d4f648ce2240459c9100f348de",
+      "gitBlob": "05fe0dae0443e8dd9b083dbaa96a1a159831d673",
+      "bytes": 11599,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-及时行乐.md",
+      "kind": "verification",
+      "sha256": "048bb6ee2dc13e294cb86fe41078db0f914c6dc937a4e327233ce2d03943e1c2",
+      "gitBlob": "9a24839aff4a01547b67c11faa70f02e543c0106",
+      "bytes": 3427,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-双通道.md",
+      "kind": "verification",
+      "sha256": "6676060c19fa0856b3d6813b7926e1fac7656e01980985b31ac7e516dbd40017",
+      "gitBlob": "7d7dca1b3dc6967267c3d9e3e1f09a3e8fa32829",
+      "bytes": 6437,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-吃了犯困的药别开车.md",
+      "kind": "verification",
+      "sha256": "990ea3eded8321ad6a9c9719869f5ee4bfcaf5caa6d46340115092853c91384f",
+      "gitBlob": "cf8a8478406426f8c0d1e5b76174cc67c74f6b89",
+      "bytes": 8608,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-名下电话卡银行卡与换号解绑.md",
+      "kind": "verification",
+      "sha256": "911eea77d4b98753104126d01649e4945b723dbc2c9dd0ca88f6a8e15b293957",
+      "gitBlob": "33817709d63f103812393d91f049b7a2b4b3ac85",
+      "bytes": 7988,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-后循环卒中夹层头痛与中暑补液.md",
+      "kind": "verification",
+      "sha256": "4904853581a82c58083186dfa75c1bdfa4435916fc947627fcea7bd68ac53b3c",
+      "gitBlob": "cf650f61a145e49223339a2b21cfb85d09bc5f2e",
+      "bytes": 7669,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-含汞祛斑霜.md",
+      "kind": "verification",
+      "sha256": "c5e7651a7eddd658e10266fe4625ab089d3d5dd018f5c5964f26ddd0b37877c0",
+      "gitBlob": "a60dc78c0bce798e1cc049c27d624e13774de097",
+      "bytes": 7606,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-和机构打交道.md",
+      "kind": "verification",
+      "sha256": "a19bf052ae689e06950aecdcea17dad48aae354a13f09552dcbb79b3811a4506",
+      "gitBlob": "00b857823d3003b833cb4d2bfafa57a15e91f4de",
+      "bytes": 11872,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-咖啡时间与总量.md",
+      "kind": "verification",
+      "sha256": "6dd2b8aa51c9aa89ea8b20909ed1f737a2b091428923b38cf7d451782f4fefb4",
+      "gitBlob": "49bf6b1a468564eee593c321b49d5885917952b0",
+      "bytes": 17437,
+      "chunks": 8,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-喝茶的霉菌毒素与绿茶提取物.md",
+      "kind": "verification",
+      "sha256": "9aee91f3c9726aba17001fd56765bea6ef7db94b54f9f0618d05934ea21ac60e",
+      "gitBlob": "820d5d2d624f3e046bc0ed908ea2fea9fb6702df",
+      "bytes": 3200,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-回国禁带动植物产品.md",
+      "kind": "verification",
+      "sha256": "636820db47720593181289667b55552abfee8a42aaab10be5f682fed0008d05f",
+      "gitBlob": "fa3d85a23eb6107ad6df1c6dc331cd383dd17626",
+      "bytes": 7878,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-回填十二处法规原文.md",
+      "kind": "verification",
+      "sha256": "2dabf3389f21e902cdaacfcbad6d3ad5f4bced5afc37614ab6328ce125599da1",
+      "gitBlob": "7e961e8b0f8f5bcceda1d07ab3a1d9b25395137f",
+      "bytes": 8962,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-回填统计急救与文献TODO.md",
+      "kind": "verification",
+      "sha256": "d64470906981e0e840961da0e7ea49329f945e3c7dcd23c7cba2354706644670",
+      "gitBlob": "ad0fc6334791d4175e467eedf5e44287fe4f2302",
+      "bytes": 10183,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-失眠认知行为治疗.md",
+      "kind": "verification",
+      "sha256": "95bf31c5406ef3890f0ae15ca49089a55174311e1dbe0408af059ac713c4e3ec",
+      "gitBlob": "c9e8460ab1b8c0621aa9d2c0c1767862288f7771",
+      "bytes": 10955,
+      "chunks": 6,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-奢侈品收藏与十八岁路径.md",
+      "kind": "verification",
+      "sha256": "2c27fcec0c36979ac728e2774cf44c6302fdf0242ee2c89d6a4e8f7e61c3b982",
+      "gitBlob": "d4594c07f884dbd4e026952c309266bc28efc592",
+      "bytes": 14698,
+      "chunks": 5,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-婴儿维生素D与洗澡防烫.md",
+      "kind": "verification",
+      "sha256": "4b7cba69a90143719024307ec2019d7124521b9b13e604d419f3737be8c6ca89",
+      "gitBlob": "621ca3d83f3424b7bc46998e5f247c20a86e4fdc",
+      "bytes": 12972,
+      "chunks": 6,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-孕晚期侧睡与产后避孕间隔.md",
+      "kind": "verification",
+      "sha256": "1918dde5bd46a0598bb2840e470ae4b7e35e37967f31c0b8be36446b40677b29",
+      "gitBlob": "39fd00706a3b2142e85d784b5d440a9ab12f44e6",
+      "bytes": 13258,
+      "chunks": 7,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-孕期流感疫苗.md",
+      "kind": "verification",
+      "sha256": "13c7aec058dcd2406e6672e29d541593e2f6894348b4c0f4b603ccff37c4edd7",
+      "gitBlob": "dd1c7102b33b2c807085963e4bd3f58d2fc2b135",
+      "bytes": 12428,
+      "chunks": 6,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-学历提升骗局.md",
+      "kind": "verification",
+      "sha256": "cb326b12d5e76ae289173f1e9ff364dd85a7c03e3b15c80b3f951acf498f4e01",
+      "gitBlob": "48edc8f8d53e83352ff856832f2a1d54d05f5e39",
+      "bytes": 4065,
+      "chunks": 1,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-学步车.md",
+      "kind": "verification",
+      "sha256": "d826e6ea8f6a20b3210fcffe7b7de3220f03ba9d64a53056ea37dccd2568ab03",
+      "gitBlob": "6bcd1a20cebebcbbac4778f3e3b8d33ed053837b",
+      "bytes": 10657,
+      "chunks": 7,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-家庭应急装备.md",
+      "kind": "verification",
+      "sha256": "18347f79c0cfe52399abed1706a4630a46717d683ce5ddd6b82e741ecf0033ed",
+      "gitBlob": "73e398a02b0402b861317843d373ab9b5c2f7d70",
+      "bytes": 12763,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-射精后疾病综合征.md",
+      "kind": "verification",
+      "sha256": "6aa61c632f6cb56c0bcb7dc024b0cdd83c459ba0666bd22884208e864d6e0e4d",
+      "gitBlob": "4c81e0880d5f33d687d41e7911c31c8149aabe2e",
+      "bytes": 3039,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-尿酸结石与胆囊结石.md",
+      "kind": "verification",
+      "sha256": "fc753fe17731f83a4fc06fb7ff5af77ae351ee09e53308521687bd6be320ae63",
+      "gitBlob": "66d51d7857af8de02276c78590f6a4e68b08c00c",
+      "bytes": 14917,
+      "chunks": 7,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-屏幕共享诈骗.md",
+      "kind": "verification",
+      "sha256": "ad71a6c894763c296850dea8d73cb97d1f5440ed6eb099d3c0120ef7b217a57d",
+      "gitBlob": "fe21a8b5f600effd4845c2c16c6ce483b82b85f9",
+      "bytes": 2453,
+      "chunks": 1,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-带药出境.md",
+      "kind": "verification",
+      "sha256": "beeae30481449b9dfc5aaa71d4295566a8053c4e50f62a40b65a5cb62c090747",
+      "gitBlob": "98f3f82d2019e45b9d8c0d6cf3c0e3ffb18c40d8",
+      "bytes": 10120,
+      "chunks": 5,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-幼儿屏幕时间与近视并发症.md",
+      "kind": "verification",
+      "sha256": "6a3bbec0904853f8a4e286a5c3bf6dfb23948c814c8f91d4877c5aa85b221518",
+      "gitBlob": "ced9f4f4fa3398ec4b06e9bf06d845cc1d3c26cd",
+      "bytes": 6870,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-应届生身份与买编制.md",
+      "kind": "verification",
+      "sha256": "1b99f93262f727ef707ece754f279bef29155e6298555e4fd046862757752cda",
+      "gitBlob": "a91fb325ca9437b8917b49cb1ba045c993b79037",
+      "bytes": 7763,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-开车手机与米酵菌酸.md",
+      "kind": "verification",
+      "sha256": "8b6be7236552073e92e9daa42e5051aa07ebc2fc2bf1f47c28ee6621731f6cf4",
+      "gitBlob": "e81f04e64c29c49b04e69fcd5dca8ad3a9e13e47",
+      "bytes": 13774,
+      "chunks": 5,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-急诊分诊与伤残鉴定残疾人证.md",
+      "kind": "verification",
+      "sha256": "2c45d47270f2e3bb92799d6a9fbff1f2baee7b44af5e073ad3d0ffc9b986ed80",
+      "gitBlob": "185ab8de4165e4cfee8adc150ef8e7963856ddb2",
+      "bytes": 15759,
+      "chunks": 5,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-情绪、算命、购物、打人.md",
+      "kind": "verification",
+      "sha256": "c8b46e5c00fcf2d4f97325b2f537a18bbc4a5cc40d4448eb65a7c6b9ce06dda6",
+      "gitBlob": "92f4003580504c959bf26ef888f3248f49e8ddff",
+      "bytes": 11631,
+      "chunks": 5,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-慢性肾病筛查与结肠癌术后运动.md",
+      "kind": "verification",
+      "sha256": "bb0d82d70174e178437b758bc46ac15b7682a0f907e7056c86a65c9b945dcd6b",
+      "gitBlob": "a65acec51bfe7ca75ca0805501bed260dde891c4",
+      "bytes": 11340,
+      "chunks": 6,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-慢病长护险与个人信息权利.md",
+      "kind": "verification",
+      "sha256": "cfc420e651e6a7a2825ce5e6a4ef760d6db4cce2f3795572c5e183f70aee8587",
+      "gitBlob": "c2a90fe70b1505e78637d7e9b3f05dc82975dde4",
+      "bytes": 6513,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-戒烟戒酒学习与拖延的具体办法.md",
+      "kind": "verification",
+      "sha256": "c3eac970c3357a680afd530da2d238985bbd1eddf18446f49a3dcec953f69acf",
+      "gitBlob": "1be7ccad2370115ef54ac343753c73f5ccb247a7",
+      "bytes": 28379,
+      "chunks": 14,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-戒网瘾学校.md",
+      "kind": "verification",
+      "sha256": "5fc5d9ca8de6df9a030ec8272f2c1ad4e61bd32c130f165d4d5ba303c9b86d96",
+      "gitBlob": "7ee9f3393e8593b83e5300c37be1e9abfb0730e3",
+      "bytes": 2717,
+      "chunks": 1,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-房颤抗凝.md",
+      "kind": "verification",
+      "sha256": "a24dbb27f3e230cae6051a67a04cf37fe99b0552a0cc007cb07c8f288d8accd8",
+      "gitBlob": "1ce510f8fda6a90969082e9642299699bc4fbc1d",
+      "bytes": 14328,
+      "chunks": 8,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-拒执失信骗贷与新型毒品.md",
+      "kind": "verification",
+      "sha256": "5f507ea197a8f0d91a1b0e04f4073554e55bc61eefea4a208963ae4a687aa0f4",
+      "gitBlob": "aa5a7e60199e38674a8fd181762b9ecf68ddc200",
+      "bytes": 10899,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-搬运姿势.md",
+      "kind": "verification",
+      "sha256": "08f8d818c508b0b5b065548909a2bb595188014bf5f412296048a4dae8ed86e0",
+      "gitBlob": "ad3e0d001a6c109138a407b7dcbdef2c9e4f0ce2",
+      "bytes": 9050,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-攀比与别人的评价.md",
+      "kind": "verification",
+      "sha256": "f2e6abb29501d34472a532053aeb12edfb4178f633205a7a388195c6fa4bd892",
+      "gitBlob": "2764330c89c47c037b5e7531069532eaac2bde13",
+      "bytes": 10221,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-断指与撞掉的牙.md",
+      "kind": "verification",
+      "sha256": "f3667f4e45c45fa80be5abe6b0abb071ec16b2fc912672a94ea3556b8506d1cc",
+      "gitBlob": "11661520b9c0d92b7511cb4a14529858201e3ab3",
+      "bytes": 9960,
+      "chunks": 6,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-早引入花生防过敏.md",
+      "kind": "verification",
+      "sha256": "b426ac8c8c4cf9ce3f4bbc98c36f2548aaf395b0747279605e1a0ee27e53dd73",
+      "gitBlob": "f86eee5d9deccfafa8bfeba8ef28e79057003ddd",
+      "bytes": 6385,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-早餐与进食时间.md",
+      "kind": "verification",
+      "sha256": "622088ace38e73ea1ca39de26517b7d79bbfb5fd9818aa0e7249c6ce19f3d9f0",
+      "gitBlob": "5a461067a1af2287c8a681015e2a32833f1fa474",
+      "bytes": 11617,
+      "chunks": 5,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-晚育年龄账与陪产育儿假.md",
+      "kind": "verification",
+      "sha256": "fac0bc5af26be670604ccc3d20c7d32fb317a60a2675a844f095f1807099806d",
+      "gitBlob": "4c4fc86996275e1fb16aec25d8af64afd696ed1c",
+      "bytes": 10043,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-有限空间.md",
+      "kind": "verification",
+      "sha256": "e0f5ff3edd02ae109e81d6f90adfa1c5d4a9d3af9564bc402f11ff1093d308a3",
+      "gitBlob": "e6121ae86ec018ac00be170ed9fc98cdddfcb268",
+      "bytes": 13077,
+      "chunks": 5,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-柏油样黑便.md",
+      "kind": "verification",
+      "sha256": "331af89ab82c459cfe12cf9405fc9262837e9e89b097ee7baa75ff0250383e44",
+      "gitBlob": "349f82ac527255b5fea3aa3fbd7d7b8f4a5aefb0",
+      "bytes": 4681,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-查血脂.md",
+      "kind": "verification",
+      "sha256": "fd1d085ebfcbfe151efa5ab907ed8fcdd355ea7e531fefa9365c137222a2a62e",
+      "gitBlob": "96b685dbfb862b8509436ef3b4f1b65f6a080d38",
+      "bytes": 5425,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-正当防卫.md",
+      "kind": "verification",
+      "sha256": "a1b05f38345fffb6aba41f9730c97448cdf5e8928a6524e2003474e384b8cdbe",
+      "gitBlob": "2f58454b216fbb66ddf757ab8faba97cd54528e0",
+      "bytes": 7838,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-没有亲人朋友时怎么办.md",
+      "kind": "verification",
+      "sha256": "fdd2d2ac3367225f3f52ab86452ac4d82e3cad88f42d3010cf55c3220e31971a",
+      "gitBlob": "8796f860f8b5a76f8c3ad21286f52f9ba5a1354e",
+      "bytes": 6069,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-泄愤式极端暴力.md",
+      "kind": "verification",
+      "sha256": "e550fff7c585e9c94e64e5e79f5e40952dbdbdb898a5c47978963c237210a5a7",
+      "gitBlob": "0965b12bae37bd180111ea854a38e35903bf2438",
+      "bytes": 12690,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-熬夜补觉与夜班.md",
+      "kind": "verification",
+      "sha256": "334609b862b1fc86078d26147e4090c86df46bece6027e1f03d470073b6e7b84",
+      "gitBlob": "1df6ed80bff5c538e1c2cc218baa280706e363ea",
+      "bytes": 19227,
+      "chunks": 9,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-燃气毒蘑菇车险预付消费与养犬.md",
+      "kind": "verification",
+      "sha256": "43fe9c556d07c98d9e4ab72ec299a9d050282eea970179c8a8866db4b9ad57df",
+      "gitBlob": "87b3956f62f9bccde18e6bafee962fb6ec5e9436",
+      "bytes": 8016,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-牙科.md",
+      "kind": "verification",
+      "sha256": "fa358e79c8e0fdcc5da68574b5ef0824c64d213c626e4d8d780229d46ba7e687",
+      "gitBlob": "5469659f0a2b8cb6c5a38991bdda03e950d72acd",
+      "bytes": 6164,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-物业停水停电与新房保修.md",
+      "kind": "verification",
+      "sha256": "1c07d0f49e5db4106c32934ac0f2104c07db77ee50d8c23ae8d87192c5d27c14",
+      "gitBlob": "c894fc22771ecdb7f5879840f56caf2c96f0119a",
+      "bytes": 9816,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-献血.md",
+      "kind": "verification",
+      "sha256": "5215f9e9c394c50f7161a847547f273aa079ee27fc4cdbb00eca35ba4415c4a5",
+      "gitBlob": "6c6e9bb9faf96963f2b62dd9b6954f98442b338d",
+      "bytes": 7491,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-电动牙刷.md",
+      "kind": "verification",
+      "sha256": "d0dde20f30e0d6aef27731aef37cc836975285a4f2da970c7abbcc3554ff7902",
+      "gitBlob": "36a6c17bc916263f476a39cf37ccfb7df12aed30",
+      "bytes": 3412,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-电鱼与野外用火.md",
+      "kind": "verification",
+      "sha256": "74cd48d5dd7dbe99e6e11c2524123e43aa5a127739c9e14ba37733d1fe79abeb",
+      "gitBlob": "13837900babb18399837ea87460deb952357f785",
+      "bytes": 14663,
+      "chunks": 5,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-痛风防发作.md",
+      "kind": "verification",
+      "sha256": "369e381fb79bf85d3d5ce37dcea36aca2ba988bbdee72c25a1473fa4fcf6f671",
+      "gitBlob": "38206d93d8d47064607a0b6f8fcb081b93b8b434",
+      "bytes": 2998,
+      "chunks": 1,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-眼中风血栓硬膜下血肿与血尿.md",
+      "kind": "verification",
+      "sha256": "b65735549c23c77c6ea0323619df8e68041148fdd09b7232fab2543c8bbbc983",
+      "gitBlob": "3fea0370eb04c10c845a0da4bb844b41c1b8e489",
+      "bytes": 8495,
+      "chunks": 5,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-睡眠呼吸暂停.md",
+      "kind": "verification",
+      "sha256": "456444a269964ba840ad18087769f6cb5445f7cd3f728f7eb08d3146cc3c6901",
+      "gitBlob": "b87e452e386e110b6defe35d0b9966509f6a5e3c",
+      "bytes": 6898,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-破解软件与DDoS.md",
+      "kind": "verification",
+      "sha256": "2c9fe94797239c029c108126c72e577b5747a38475bf57410c8e47b329d22964",
+      "gitBlob": "e1d348fe1ad2e0fa3ca3887e6dd9118688edb324",
+      "bytes": 14093,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-社保转移接续.md",
+      "kind": "verification",
+      "sha256": "e68b291e4ea4f096d4037630e48558e5f890ae3686b792df96759346f7d4733d",
+      "gitBlob": "6361822c979cfb2637e94c559f4e69922fb96508",
+      "bytes": 9213,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-离婚孩子抚养费和探望.md",
+      "kind": "verification",
+      "sha256": "9725ab1e60418b512bc5e67dee28ead6921829f66f59d7b2ae091cf6fc1c6b97",
+      "gitBlob": "4c1b184efe36a47df2756bd8379e0f7bc6fd0d72",
+      "bytes": 8150,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-空白劳动合同.md",
+      "kind": "verification",
+      "sha256": "e7c6b86216f57b91b62e8d6588a9c1d4f2674962616fa716cde1a8a4b9f827db",
+      "gitBlob": "c48885d354698c8677ca6ca8912ab689c57f5a3e",
+      "bytes": 11274,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-窗户破伤风二手烟公积金与猝死工伤.md",
+      "kind": "verification",
+      "sha256": "937bd317f52093b974572bbaf694ad37c75131a587716bc76116f8f7566d10c1",
+      "gitBlob": "7a744ea25c21ae274f7ab9830ea543f41fe82732",
+      "bytes": 6228,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第10节伴侣治疗.md",
+      "kind": "verification",
+      "sha256": "3b4b210e2d2d02c61b52e8a14aa4cf52258e862d503a85d5eaf108710df034aa",
+      "gitBlob": "098764a9451f44738fa5c80db5dff64c04ae09d9",
+      "bytes": 9109,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第10节父母出资与夫妻共同债务.md",
+      "kind": "verification",
+      "sha256": "efa789e9ae1a7bb9fe14daa61e03226a15579d403ee1dd89013b93fc3735d96a",
+      "gitBlob": "bf922dc1baf0f92f525583c904823d2e44a92513",
+      "bytes": 7109,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第11节白帽子与漏洞报送.md",
+      "kind": "verification",
+      "sha256": "8c477c456209f6abd2b1cb8bf335084862c9a45bc64c3cd8261e3b79f1ed80d5",
+      "gitBlob": "5b627ab6d6fb1e6ef2955768b21ac67c39f2285e",
+      "bytes": 11983,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第11节跳广告工具.md",
+      "kind": "verification",
+      "sha256": "b9c9e3f26ce120bfe4b93518db76bf2f57ef2938915acf1d80b884ab4c59a9b5",
+      "gitBlob": "c0e4b89e76b188362e1354153b14b723e036329e",
+      "bytes": 11973,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第12节一人公司.md",
+      "kind": "verification",
+      "sha256": "9cf9a8a7f7dd88e085e27f7ef0c1715231606c64841927c1cf541af7aeebf822",
+      "gitBlob": "3ec830668a6f9044468e0727dc8e863500163fa7",
+      "bytes": 2592,
+      "chunks": 1,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第12节注册报税与涉税诈骗.md",
+      "kind": "verification",
+      "sha256": "6d49c3ad827b54d3e9f6821971f06a9a0373c5a03905108ada421d1cadd6211c",
+      "gitBlob": "357a3c0c059026c1e1da6cc0920e671230d1ff55",
+      "bytes": 10461,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第13节婴儿噎住与心肺复苏.md",
+      "kind": "verification",
+      "sha256": "4b7afb08c25c9fbfb449f459992f1fbdbc5ee98c261e92aafc63a1dbcd8efb2e",
+      "gitBlob": "cfb6dd0cc0634bdf75ceedd1cb082cc49602c3dc",
+      "bytes": 11539,
+      "chunks": 5,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第13节并入.md",
+      "kind": "verification",
+      "sha256": "e787ebb47bc4776731034cd687772e59de1ed785a3455432089877d264fdb736",
+      "gitBlob": "43126e04fe573c53b6088b2d529bc910a25fd5dd",
+      "bytes": 6740,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第15节与病历条回填.md",
+      "kind": "verification",
+      "sha256": "a094a2a49701534c90ef6a1c11e7d1bdc856c8f7b4e7adf4e501f3968b1ec86d",
+      "gitBlob": "d4c3d396a4a47071d6e334b3c8ee3a879e656758",
+      "bytes": 5601,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第15节买房.md",
+      "kind": "verification",
+      "sha256": "bf993b27a1c016bdc08b8de51da6ea44dfeb7ae510d20269c3a3b2f835e361fb",
+      "gitBlob": "51304653eb382c634ae488ac8542de31d419ee26",
+      "bytes": 17012,
+      "chunks": 5,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第17节白内障手术.md",
+      "kind": "verification",
+      "sha256": "fc26fb79cac5b9f07401cca00317496f5c859070e14b13fc3400175e67724f0a",
+      "gitBlob": "68914a45c5bb3f99a5f553b932cd60c34e061319",
+      "bytes": 7943,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第17节老人遛狗.md",
+      "kind": "verification",
+      "sha256": "a7e071f2998af4729ea3293decf5627ed3bb58b6d66a6b2acd82727d1d644bc0",
+      "gitBlob": "be80ae5d7b495329ac0eeb82b9294148d8ae8462",
+      "bytes": 6912,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第18节个税扣除.md",
+      "kind": "verification",
+      "sha256": "49e8670e69a6c03a472488d2f3806a6d334e8a7a03bbea3816934dd104548f96",
+      "gitBlob": "9c4daa2fb388e161caa6ec9241ed7e9063b435ee",
+      "bytes": 4917,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第19节离职证明与补偿个税.md",
+      "kind": "verification",
+      "sha256": "252e84f7ac2611542778b6250ade3f24fb27329c904b440d01a91f0c297b5a7a",
+      "gitBlob": "f79032b2f807d5c53a7663174582a14ee4627c7a",
+      "bytes": 9003,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第1节冰面量厚度.md",
+      "kind": "verification",
+      "sha256": "0bdbb0601aaf0b6330a29e059a29adde31350c37e33ed9cf5fad208a58d2b400",
+      "gitBlob": "5bdebdc8224072d3e6f92ba83e6791af9b546f21",
+      "bytes": 5343,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第1节失控放射源.md",
+      "kind": "verification",
+      "sha256": "04f334bdeebe8f051fc6669e114fe09c659fe82b7deca3feb7ed4a8b8ceed011",
+      "gitBlob": "7a42bee9c6d869cfbd3a95626a96fa7d620e641e",
+      "bytes": 12713,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第1节骨质疏松筛查.md",
+      "kind": "verification",
+      "sha256": "33b94d7ef4a68caea7c5e6fa7d7b0cab0e4009c6d8753ad584fc0201c2cafb42",
+      "gitBlob": "fec7ee9f0faf9c49df359eb9d1298d0a075726fc",
+      "bytes": 10796,
+      "chunks": 5,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第20节妈妈吃素补B12.md",
+      "kind": "verification",
+      "sha256": "5ebc00b89cf2e4827768caaf12029b7542ef16c1272b00e1eba7d59c7088b21e",
+      "gitBlob": "1652e81f8019d5fc263daf3ff2e50b5742f39d10",
+      "bytes": 5775,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第20节新生儿黄疸.md",
+      "kind": "verification",
+      "sha256": "058ea0522b73b582f3cb39affe44a09ae16ddb28790ee3663f3c29569f8a59fc",
+      "gitBlob": "c3fb6f8d607c7ca547e5c34421383e56062f2e98",
+      "bytes": 8663,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第21节境外用卡.md",
+      "kind": "verification",
+      "sha256": "80b62b98791b3d43dc89fcb84483f325dbae227301ec091f7efcaad520ccdfcc",
+      "gitBlob": "9560bff29ac7666787d260c953f6ed18ac2bae4c",
+      "bytes": 9400,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第21节现金申报.md",
+      "kind": "verification",
+      "sha256": "1aa18d041e2eb0c05894ec9de0a790d481927fa3b3e475e52ccc2b05e01223e4",
+      "gitBlob": "5e534999593cd9b1eb1e99e1916e9430ae9c8054",
+      "bytes": 7193,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第25节人没了当时怎么办.md",
+      "kind": "verification",
+      "sha256": "77e8d6f8831c6abf7d8b870f31a73adda4c8f696ac0ec1161c9d158fc8d4ae69",
+      "gitBlob": "dd664ab185e8ff755aadfe9cfffe336498e13d12",
+      "bytes": 7904,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第26节做平台.md",
+      "kind": "verification",
+      "sha256": "dcd1995d053b44a2a0a19863a28ecc134faf063e8cb3387f138b4c5bbabedd77",
+      "gitBlob": "973275f648da1ea56dfddd09865081871d931cbe",
+      "bytes": 12379,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第27节孕期养猫弓形虫.md",
+      "kind": "verification",
+      "sha256": "8d15eda70be03a51abc36202cba608dd729de2b00bbeceaca9c2f38fd2457747",
+      "gitBlob": "3876cd48b67dc8770fe8eba70c809a4929a1fc45",
+      "bytes": 8792,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第28节减重针.md",
+      "kind": "verification",
+      "sha256": "de76b950752557ccea2890bbfa91f5ef2b1ba798142767f85e2c7146b03ed040",
+      "gitBlob": "15a208b51a6ce505ca7c73c96692bcb944479f32",
+      "bytes": 5686,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第2节养狗.md",
+      "kind": "verification",
+      "sha256": "0813ee249113004c78ea63fbadebaf5e6b9c523ea23e6aba89da2a1fd71b289d",
+      "gitBlob": "b0f6c79e284da5ebf3abe7886db625a69344534d",
+      "bytes": 7961,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第2节室内空气.md",
+      "kind": "verification",
+      "sha256": "a046d9c3e60e5d78028b5bf7cc239d30940f864047a80e78f0536b6c3288c59e",
+      "gitBlob": "0b0b1b753a9bd37c398a97ce423ec678356ba70c",
+      "bytes": 5124,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第2节绝经激素治疗.md",
+      "kind": "verification",
+      "sha256": "73ca4063c353ea1ee55c775c9bbbeef8c7d5a49a189e23808f0a81d42ca5dab6",
+      "gitBlob": "50dc63f422f591b2e951baa3523902f06ba35239",
+      "bytes": 8797,
+      "chunks": 5,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第30节管孩子不打和养育课程.md",
+      "kind": "verification",
+      "sha256": "ec0163bed7dfb64765e260017b24fbc9866c7f24cb9365e55bdb2c139ff86926",
+      "gitBlob": "a4c11463ef41f0c6bf5c942d95f9c5ce11c93cb6",
+      "bytes": 15897,
+      "chunks": 7,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第31节远程给境外雇主干活.md",
+      "kind": "verification",
+      "sha256": "c384802859099e547e7014e3fafd7b56218aed760e3cd280a568b04fab6a9cb9",
+      "gitBlob": "749ff01e91d49a90b066d55889b0a87e74ceac56",
+      "bytes": 10274,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第34节并入.md",
+      "kind": "verification",
+      "sha256": "4caedea6bb77bad27b541e28b8f156b3c4778ea629bef584260d04c9e1781658",
+      "gitBlob": "6740c6d239f45758471e6b4cef38ea83a83e22b0",
+      "bytes": 7242,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第34节过期药与相互作用.md",
+      "kind": "verification",
+      "sha256": "b885f680757fae564309444c086929792962ddb4978aa92485fa4f528197c0d6",
+      "gitBlob": "e4062808aba4115054e488e8658551d1c57b5e59",
+      "bytes": 8527,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第3、5节.md",
+      "kind": "verification",
+      "sha256": "2312b710edc240532a6bfc38ffb0e388a2477d938e5d0b714e099877396dbffd",
+      "gitBlob": "80fa6cf339edd64a1f57304490aff97327d2b4f3",
+      "bytes": 9250,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第3节痛经.md",
+      "kind": "verification",
+      "sha256": "258c749ee0188631643b444ca3cf33ce38e953718e14cb837155394c981b87e3",
+      "gitBlob": "9cb310669282b0773c00e1b5f74c58e74b358e10",
+      "bytes": 7993,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第5节借钱看年化利率.md",
+      "kind": "verification",
+      "sha256": "ff996c9e7302807ac9b2d03db9692fe319e0a3c4202c75a9267b16d80ee2ae70",
+      "gitBlob": "05f46ba4e46bf994c97355d684dbeb77c6ea6e6f",
+      "bytes": 7224,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第5节炒股的两条行为账.md",
+      "kind": "verification",
+      "sha256": "4f866819ae7862d0be7532bfdd3892c7ce81dddc411c5c8ebfd77b8e08b45060",
+      "gitBlob": "2e5529097a4999a46b884c3269265f50632bef9c",
+      "bytes": 8283,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第5节职工养老算账.md",
+      "kind": "verification",
+      "sha256": "134ec1f05c8bc2b1e67e11da59f0e019fce27a7ad5327236a117585250fab5d7",
+      "gitBlob": "ac9db2f444703c7753c1114fb2fe8014e62f5185",
+      "bytes": 5841,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第5节飞单与取现.md",
+      "kind": "verification",
+      "sha256": "1e08a04b9bf7e9d0931ac53504657c047af2500785d11d7daf6c95fdc480d3a2",
+      "gitBlob": "47b0001e163359bbff7ed73fbe712c89015a6004",
+      "bytes": 5382,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第6节通用体检套餐.md",
+      "kind": "verification",
+      "sha256": "f7dd8d94ce5acd69d8678e04b23a570cf05e670853ecabc4bf406a35e274f2e4",
+      "gitBlob": "a785db18f95b688ac90a0d1c5e4e6909a6c22a82",
+      "bytes": 5759,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第7、8节.md",
+      "kind": "verification",
+      "sha256": "f47977991032d2f7096351e139d8e3ceba3d037cd1d91bcca142a9c5da5ece72",
+      "gitBlob": "6f4feac3e9bf744be721334c52939b3f73c2b529",
+      "bytes": 19051,
+      "chunks": 6,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第8节并入与修链接.md",
+      "kind": "verification",
+      "sha256": "b9c417db24661524449c2c5d52c4ad5f426bbeb88c8b1c34607de171a82fff13",
+      "gitBlob": "fe52a077b57090192e68b55af5690c5a364bb845",
+      "bytes": 7212,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第8节被指控与被诬告.md",
+      "kind": "verification",
+      "sha256": "0deaf687a2aab5064e71e9d821f2b6d05f2b13097910aa262a10cf59dc956303",
+      "gitBlob": "30e9784dd7094f63b17c00a91f157854de9fe2e0",
+      "bytes": 10584,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第9节境外信息只看不转.md",
+      "kind": "verification",
+      "sha256": "5141226ec9182c28c0bb74aca748bf42eb7f68a1e20d844ad42899b202315a6f",
+      "gitBlob": "b764838919e4836392ea892862dfd672a60dffb4",
+      "bytes": 6420,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第9节著作权与同人.md",
+      "kind": "verification",
+      "sha256": "c0389ba94003379563c7601dfb090c68b3fcc928c02ed68842da1f7ea8934b53",
+      "gitBlob": "778ac7e9bbbd7adc0972fabfaf3d9d8d6560552c",
+      "bytes": 15401,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-第9节薅羊毛.md",
+      "kind": "verification",
+      "sha256": "48b7a9ac881b6b4b15e6e17e1b177ba74a80c56a5bbfee0facb069d8c07727b4",
+      "gitBlob": "64a44c2e7c80b7f5a949af4660b042465c4be65c",
+      "bytes": 12315,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-糖尿病前期.md",
+      "kind": "verification",
+      "sha256": "d4f77133458db69e4ee8dd8216d449c65d619c9fc651524b8e0791bf80f31eca",
+      "gitBlob": "8e67c1a8549614a0ad5f9c88c99537e32b4bf690",
+      "bytes": 11689,
+      "chunks": 6,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-纽扣电池与醉酒.md",
+      "kind": "verification",
+      "sha256": "82e1c9e66424eba57ce51f8e6aae6fafcfe03f726718ffa1d126e1a5cc474491",
+      "gitBlob": "278abf91e1d4fe91406c9e334d11dc17031d821f",
+      "bytes": 14690,
+      "chunks": 6,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-结核病.md",
+      "kind": "verification",
+      "sha256": "aa54772c031f40b7bf8695b891e04ed6b2b54544a452d14e96fe88c9fa218e92",
+      "gitBlob": "cf6c112d0ebcf8fedf7de5dd89263774ff172043",
+      "bytes": 11949,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-继承不必先公证.md",
+      "kind": "verification",
+      "sha256": "0369fea8ac6698c0d4da79a3bd63a347927edb4e390fc7e420ce93c27c99a973",
+      "gitBlob": "b66f9b249202b0fad79b3e0330f6d5770f4c8dc1",
+      "bytes": 7389,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-考试作弊与替考.md",
+      "kind": "verification",
+      "sha256": "aac6d39212153d2977faed0e60161f2c0496c8759790bf3a0670869de39e6e98",
+      "gitBlob": "0aa7909c400656f8ddf88da65597895e5b45404b",
+      "bytes": 9058,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-职业病与化学灼伤.md",
+      "kind": "verification",
+      "sha256": "3e6bb406b92f7930640c9c9bcdfb06faba58c1f1ef7362fe8ce667c0ec4fffbd",
+      "gitBlob": "e4f0a510f692ff4988df52fc8e229a93546d8ba4",
+      "bytes": 9051,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-肝吸虫.md",
+      "kind": "verification",
+      "sha256": "be3b7d7957ae9d1f1b276fb0597f59ae30b735c5349dd0c7dcce0aabfeaf6d89",
+      "gitBlob": "61229b98bc00fdb72f7b58be14a51d9fd7e22194",
+      "bytes": 11899,
+      "chunks": 5,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-肝肾不好时的用药.md",
+      "kind": "verification",
+      "sha256": "13ca12cb2a1c336f3d2684d0950deafc2dd13573b6089080f94f05f857d39879",
+      "gitBlob": "aa9efb68d18ba3b625550a8d48b869fc6886d93e",
+      "bytes": 11706,
+      "chunks": 5,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-胃镜筛查.md",
+      "kind": "verification",
+      "sha256": "0cbceab97310399c20a1d0f464fa889684781103ed72ab005c68f04f9905e83c",
+      "gitBlob": "57c97a9236f740a0ee00de7f1af52b8fdf525b23",
+      "bytes": 14777,
+      "chunks": 7,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-脊髓损伤排尿与辅具适配.md",
+      "kind": "verification",
+      "sha256": "cdaaee8b3c9b52fe3b3f812c5095911cce4371f557c5ffa7cd7eb42aaadb523e",
+      "gitBlob": "2bb983e773620632569d8435bb2dd9e8198b0674",
+      "bytes": 8222,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-膝关节镜.md",
+      "kind": "verification",
+      "sha256": "9862fa51efe061aef8102f18218fe6b6e600465d6c67a126de7a76637a861406",
+      "gitBlob": "e78c11b1536d86069fb23ba857a459797376b941",
+      "bytes": 9123,
+      "chunks": 5,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-自杀的后果.md",
+      "kind": "verification",
+      "sha256": "0b6615d2af1972b804b3e8835a095df071448e694e54121520ae07a1c7c95c4b",
+      "gitBlob": "1425d68b12ef10f952f8b23bb90852c7b46ae86f",
+      "bytes": 17323,
+      "chunks": 7,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-自首与追诉期限.md",
+      "kind": "verification",
+      "sha256": "316c7cdde4c52ab15c87b8ae53e98fdbcdb2b88a6985825f3f036ea94fce61ad",
+      "gitBlob": "c371a89fb133da81deafeb584b832cdcb5caeda2",
+      "bytes": 7070,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-虚拟货币.md",
+      "kind": "verification",
+      "sha256": "24aee212b2b5d2d938266e823107caab868ea7b409878b3a8dcc7dd5e9975e5b",
+      "gitBlob": "9cb9591c1a6b26ae55f6cb6681be63df8bd5cd49",
+      "bytes": 7938,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-被网暴之后怎么办.md",
+      "kind": "verification",
+      "sha256": "5d55e0c2adf3e3fa31b948f2b1578d44680716057968ca194d029bfa20cd5be0",
+      "gitBlob": "489ab27c416374a52ccb9fdd335a313363479a77",
+      "bytes": 5482,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-褪黑素与输液.md",
+      "kind": "verification",
+      "sha256": "7e8fcc9bc5c4629e60d2d63db4a81dceb84f78cad00645e271641bc0411395bf",
+      "gitBlob": "d564e2ae85e900ccaddf794644fde99ef0d0ea32",
+      "bytes": 9339,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-要不要死记硬背.md",
+      "kind": "verification",
+      "sha256": "b278d4c33512f545f5e1b09e6c4c400cb05da8e1a5ff8145a841592dac35ffe6",
+      "gitBlob": "ea755e56d5f754b7d07e322ce7b560036a10a74d",
+      "bytes": 4525,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-角磨机.md",
+      "kind": "verification",
+      "sha256": "b3c3c17cb2826e7e3d96092efcbeb9e9ad322d63a62e9dc321207b0411aca61c",
+      "gitBlob": "2b9b4e6d08d70af03ef7c1f3f1df89f4e279bd2d",
+      "bytes": 11188,
+      "chunks": 5,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-读书还是打工.md",
+      "kind": "verification",
+      "sha256": "6b1de75f19afc8642a092bdeedc1622a893143aed6424b3b09fd6d4621eebb4f",
+      "gitBlob": "5cd520cb26ff9c07c9bf1c5beb6aea1b4b5ef022",
+      "bytes": 13198,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-读研读博.md",
+      "kind": "verification",
+      "sha256": "0dbceff38aac58ec51863b5356d225db37439ce16271064809e01e19e511a446",
+      "gitBlob": "bb537e45255fe007ad7c579e8dd0f62b0ed98b8e",
+      "bytes": 4365,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-调岗降薪与劳务派遣.md",
+      "kind": "verification",
+      "sha256": "ae6f6de6098b1b2ca8a2f56d9a831cea9806f7a3ab7abe1c0ed85e84434693ae",
+      "gitBlob": "20ce5c6832a8da04436fc8550e7ceaf1ba979220",
+      "bytes": 8530,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-跟团购物退货与机票退票.md",
+      "kind": "verification",
+      "sha256": "2cf14c40919c1ffe8ffdfbeb6534567a07eaad5fb303fea7e59fafdf63cc2b94",
+      "gitBlob": "ff7e41152d837f767658407107dc1c733dcbcdb7",
+      "bytes": 8035,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-还不上信用卡网贷.md",
+      "kind": "verification",
+      "sha256": "6454ebef56327e5256f31e4f3568ed2912f216b5f2aec9c3d40a73b0c836e8ea",
+      "gitBlob": "db8f439ddd1027d95abfafcadf5df698734c9f7f",
+      "bytes": 10273,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-进货假货与图案版权.md",
+      "kind": "verification",
+      "sha256": "7af3bcc4eddae1cd551a1bc461fce8aacd76c2e399c920e49e38ad226677dc4a",
+      "gitBlob": "505cc4789b9e8d35b327d36ca18dc589f064b4bb",
+      "bytes": 8533,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-遗产范围内还债.md",
+      "kind": "verification",
+      "sha256": "cf2e4c43c6bc08f3099e40dce00f8326b74997f9ab0d7ac346bdda615ee30ec4",
+      "gitBlob": "8f11d2c0e91dc19b4e021b439e96627f7aec516c",
+      "bytes": 8978,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-配偶打赏与婚外转账.md",
+      "kind": "verification",
+      "sha256": "04d306a09dbd869c04c676b6e9466e5157a959deaa7ced7a80258f20c60d470c",
+      "gitBlob": "908c39013ee1059e0f578938c82040c563e544e4",
+      "bytes": 5869,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-酒后泡澡与运动头盔.md",
+      "kind": "verification",
+      "sha256": "b01d717ae7b463d81e5b3c9a707898338de2f09610354fc583042f375ec10c90",
+      "gitBlob": "1e29e46f80b90b4de1ae5ef301851eb7d4fc818f",
+      "bytes": 8907,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-针对孩子的骗局.md",
+      "kind": "verification",
+      "sha256": "4f1eda009cd62d696ff8416505f23b1e4e7c9f5401a5dcb0bffef7e5147dd2bb",
+      "gitBlob": "f691873d92e5bc9b0eb98dd2714ebbe168c8c5af",
+      "bytes": 4979,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-长期爱好.md",
+      "kind": "verification",
+      "sha256": "ef2922e8be98f0dc64aeaa7931c4ef6cb3eb899fdbdd075490cfbbac42bc8a67",
+      "gitBlob": "7da522add5b0618801f0ba0862eed99b7ec2f975",
+      "bytes": 8165,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-门窗锁防盗.md",
+      "kind": "verification",
+      "sha256": "dbd4232de35a4e6733aceeb1f60f2734ab3883ec1c615f7fce609d963082eb82",
+      "gitBlob": "81242f22fbec843e1be1626332d656facffc1cf7",
+      "bytes": 8937,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-防性侵教育.md",
+      "kind": "verification",
+      "sha256": "9415fd5db8589f1be080e0ed76ca5124b60c1a11a959a55e9ca61dee6f59b0d2",
+      "gitBlob": "5fc25bcaca7923fd8ee42d24f6c089f204b73e30",
+      "bytes": 11546,
+      "chunks": 5,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-防身器械.md",
+      "kind": "verification",
+      "sha256": "4cb37962b64705ab2843a6e2bf437944ab4a55d945892a31fb94b44198b93f9d",
+      "gitBlob": "62615d2dfc39c9022f4407879d2a91d1125ae8ce",
+      "bytes": 8168,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-陌生人出事该不该上.md",
+      "kind": "verification",
+      "sha256": "13f90a8db7253f89d825211959042cdd7790795022cc399b5f9fde868e6628f3",
+      "gitBlob": "7f37a0e48701e3650e03cd9e1c761d69941b13f8",
+      "bytes": 17370,
+      "chunks": 5,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-青光眼急性发作.md",
+      "kind": "verification",
+      "sha256": "f13453188b28c644256ee72ba652896464f6f68e133451ba6495036dc0c0aabc",
+      "gitBlob": "0b0eaeb4529b38370ce0dd3286b62c45f2683210",
+      "bytes": 4941,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-非全日制研究生.md",
+      "kind": "verification",
+      "sha256": "cf8a1992be4160b0bf5f841e920758678985bf7abf0fbfd0d0626c5c24fe8eef",
+      "gitBlob": "678b2b1ee7b0cab76796ab4049f37b8199000c4b",
+      "bytes": 5666,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-食品安全.md",
+      "kind": "verification",
+      "sha256": "140ef3d1826a7c266c1041fe7ec98a2f80282b10d624380399525c81d1db7e2c",
+      "gitBlob": "3e93dab5334e6b40a53c0bd2fca67a9151751466",
+      "bytes": 16164,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-骑车年龄与运动撞头.md",
+      "kind": "verification",
+      "sha256": "1a205d1bc09787d905bba1bc8666d967ca6ba993b75f9833e02a4512ee0cc54f",
+      "gitBlob": "30d5204efe988fe2cc9c361ff19bb27da205448c",
+      "bytes": 9258,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-骗保.md",
+      "kind": "verification",
+      "sha256": "056e472859d5494d01398d1edcc9a9ed3f5e6d96aa4d7461bd2704da335464a9",
+      "gitBlob": "8fad937fea62e61d05fe68cd032630b3271dd3cf",
+      "bytes": 7771,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/核实记录/追加-黄曲霉毒素.md",
+      "kind": "verification",
+      "sha256": "4bfdba8f6f8ab5cdb8232ccb198531d936ea9f12776f1bba0e04a7910a21b3b9",
+      "gitBlob": "f26f39ad13a307fe4d35a44f3719364dbd04d5db",
+      "bytes": 9244,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/生物钟和夜班.md",
+      "kind": "article",
+      "sha256": "0095a6cfee0a3cbb863245d54eb278341d95be35b63ee1460a5ba3e333cdb7ff",
+      "gitBlob": "4ff3b879f62c4f63c9834c0567258663a586d3a6",
+      "bytes": 11440,
+      "chunks": 4,
+      "matched": true
+    },
+    {
+      "path": "docs/结婚划不划算.md",
+      "kind": "article",
+      "sha256": "8a24ae8c813dc9fb834c15244d3a24a9d249e9d67558c14fd8f06237bc9cf21a",
+      "gitBlob": "4d0538c2141506ad85e42af4dec90a78a490ca6e",
+      "bytes": 20643,
+      "chunks": 6,
+      "matched": true
+    },
+    {
+      "path": "docs/被裁了之后先做什么.md",
+      "kind": "article",
+      "sha256": "fc50d80377676b33da9b551ac65193a169b4510b3c07cb922160bbede2db98ac",
+      "gitBlob": "85d6986d2f14f4f70a758a96caca2ce2e7a4b632",
+      "bytes": 5997,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "docs/遇到陌生人出事该不该停.md",
+      "kind": "article",
+      "sha256": "5ac0bac9f2b6fdac80b554921918831341e1f003f753544bc29e1820c372db65",
+      "gitBlob": "39bf81b665920762b2aefa84dae942643acc8cb6",
+      "bytes": 9198,
+      "chunks": 3,
+      "matched": true
+    },
+    {
+      "path": "其他语言.md",
+      "kind": "reference",
+      "sha256": "cb150c000027367380db10cb52dd185e2a62a5fce3c6af5c9228ab46286df6fd",
+      "gitBlob": "348d86ca605b51fa6c253a255abdf416e1677833",
+      "bytes": 2923,
+      "chunks": 2,
+      "matched": true
+    },
+    {
+      "path": "衍生项目.md",
+      "kind": "reference",
+      "sha256": "ef7b695702ea3a5e5d4ee8cf59fffd1336b8468eff0450b90f56844fbab1c0f1",
+      "gitBlob": "e8503200139935771b8165745e0f83c03e33b7ff",
+      "bytes": 9176,
+      "chunks": 3,
+      "matched": true
+    }
+  ]
+}

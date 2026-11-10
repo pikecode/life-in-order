@@ -1,0 +1,17 @@
+[Unit]
+Description=Life in Order
+After=network.target
+
+[Service]
+Type=simple
+User=lifeinorder
+WorkingDirectory=/opt/life-in-order/current
+EnvironmentFile=/etc/life-in-order.env
+Environment=NODE_ENV=production PORT=3000 HOSTNAME=127.0.0.1
+ExecStart=/usr/bin/node server.js
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target
