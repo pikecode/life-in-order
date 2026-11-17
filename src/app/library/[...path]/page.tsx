@@ -24,7 +24,7 @@ export default async function DocumentPage({params,searchParams}:{params:Promise
  const headings=documentHeadings(document.markdown),outline=headings.filter(item=>item.depth===2);
  return <><SiteHeader current="library"/><main className="document-layout" data-reader>
    <div className="document-navigation"><Link href={`/library?kind=${document.kind}`}>← {documentKindLabels[document.kind]}</Link><span>固定来源版本 · {upstream.commit.slice(0,7)}</span></div>
-   <div className="document-grid"><aside className="document-sidebar"><ReaderSettings/><DocumentOutline headings={outline}/></aside>
+   <div className="document-grid"><aside className="document-sidebar"><DocumentOutline headings={outline}/><ReaderSettings/></aside>
    <article className="document-paper">
      <DocumentPosition sourceCommit={upstream.commit} path={path}/>
      {document.kind==='verification'&&<p className="document-context">这是上游核实过程的历史记录，可能包含待核问题或已修订表述，请结合对应正文阅读。</p>}

@@ -1,10 +1,7 @@
-"use client";
 import Link from "next/link";
 import ContinueReading from "./continue-reading";
-import Form from "next/form";
-import SearchButton from "./knowledge/search-button";
+import HomeSearchForm from "./home-search-form";
 import SiteHeader from "./site-header";
-import { beginSearch } from "@/lib/usage-client";
 import type { getKnowledgeHighlights, getKnowledgeChapters } from "@/lib/content-db";
 import type {DocumentSummary} from "@/lib/documents";
 import {documentHref} from "@/lib/document-links";
@@ -49,15 +46,7 @@ export default function HomeHub({
         <details className="home-search-secondary"><summary>想找某个具体问题？展开搜索 <span aria-hidden="true">⌕</span></summary>
           <div className="home-search-panel">
             <p className="eyebrow">从这里，找到线索</p>
-            <Form action="/knowledge" autoComplete="off" onSubmit={event => beginSearch(event.currentTarget)}>
-              <label htmlFor="home-query">你想了解什么？</label>
-              <input type="hidden" name="mode" value="hybrid" />
-              <div className="knowledge-search">
-                <textarea id="home-query" autoComplete="off" name="q" maxLength={500} required rows={3}
-                  placeholder="比如：押金不退怎么办、睡不好、医保断缴……" />
-                <SearchButton label="搜一搜知识 →" />
-              </div>
-            </Form>
+            <HomeSearchForm/>
             <div className="home-examples" aria-label="试试这些问题">
               <span>试试：</span>
               {["房东要扣我的押金", "被裁后怎么办", "孩子出生办什么"].map(question =>

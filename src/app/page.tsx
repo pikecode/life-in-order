@@ -1,3 +1,4 @@
+import "./home.css";
 import {getPublicContent} from "@/lib/content-publication";
 import HomeHub from "./home-hub";
 import { getKnowledgeHighlights,getKnowledgeChapters } from "@/lib/content-db";
