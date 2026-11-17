@@ -189,12 +189,13 @@ export async function getReadingBatch(sourceCommit:string,chapter:string,entry:n
     SELECT o.*,k.data->>'title' AS title,
       CASE WHEN o.position >= $3 AND o.position < $3+8 THEN k.data ELSE NULL END AS data
     FROM ordered o JOIN knowledge_entries k ON k.source_commit=$1 AND k.path=o.path AND k.entry_number=o.entry_number
-    WHERE o.position BETWEEN greatest(1,$3-8) AND $3+8 ORDER BY o.position
+    WHERE o.position BETWEEN greatest(1,$3-8) AND $3+10 ORDER BY o.position
   `,[sourceCommit,start.topic.chapters,start.position]);
   const neighbor=(position:number)=>{
     const row=rows.find(item=>item.position===position);
     return row?{chapter:row.path.slice(5,7),entry:row.entry_number,title:row.title}:null;
   };
   return {...start,entries:rows.flatMap(row=>row.data?[{...row,data:row.data}]:[]),
-    previous:start.position>1?neighbor(Math.max(1,start.position-8)):null,next:neighbor(start.position+8)};
+    previous:start.position>1?neighbor(Math.max(1,start.position-8)):null,next:neighbor(start.position+8),
+    upcoming:rows.filter(row=>row.position>=start.position+8).map(row=>({chapter:row.path.slice(5,7),entry:row.entry_number,title:row.title}))};
 }

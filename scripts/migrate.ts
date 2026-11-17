@@ -1,4 +1,6 @@
 import "dotenv/config";
+import {migrateAdmin} from "../src/lib/admin-maintenance";
+import {migratePublication} from "../src/lib/content-publication";
 import { db } from "../src/lib/db";
 import { migrateUsage } from "../src/lib/usage";
 import { migrateDocuments } from "../src/lib/source-documents";
@@ -28,6 +30,8 @@ try {
   await migrateDocuments(db);
   await importContent(db);
   await migrateUsage(db);
+  await migratePublication(db);
+  await migrateAdmin(db);
   console.log("数据库迁移完成");
 } finally {
   await db.end();

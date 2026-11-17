@@ -27,8 +27,9 @@ export function documentExcerpt(markdown:string) {
 export function documentHeadings(markdown:string){return headings(fromMarkdown(markdown));}
 function headingIds(){return (tree:Root)=>{headings(tree,true);};}
 const paths=new Set(manifest.files.map(file=>file.path));
-export default function SourceMarkdown({markdown,path,upstream}:{markdown:string;path:string;upstream:typeof Upstream}) {
-  const link=(href:string)=>resolveDocumentLink(defaultUrlTransform(href),path,upstream.repository,upstream.commit,paths);
+export default function SourceMarkdown({markdown,path,upstream,documentPaths}:{markdown:string;path:string;upstream:typeof Upstream;documentPaths?:string[]}) {
+  const availablePaths=documentPaths?new Set(documentPaths):paths;
+  const link=(href:string)=>resolveDocumentLink(defaultUrlTransform(href),path,upstream.repository,upstream.commit,availablePaths);
   return <div className="source-markdown"><ReactMarkdown remarkPlugins={[remarkGfm,headingIds]} skipHtml components={{
     a:({href,children})=>{const url=link(href??'');return url?<a href={url} {...(url.startsWith('http')?{target:'_blank',rel:'noopener noreferrer'}:{})}>{children}</a>:<span>{children}</span>;},
     img:({src,alt})=><a href={link(typeof src==='string'?src:'')} target="_blank" rel="noopener noreferrer">{alt??'上游图片'}（查看来源图片）</a>,

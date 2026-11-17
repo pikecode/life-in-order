@@ -23,12 +23,12 @@ test('完整来源、连续分段、目录与安全 Markdown 展示',()=>{
  assert.deepEqual(documentHeadings('# 标题\n## 同名\n```md\n## 假标题\n```\n## 同名').map(item=>item.id),['标题','同名','同名-1']);
  const paths=new Set(documents.map(doc=>doc.path)),marriage='docs/结婚划不划算.md',book='book/10-恋爱和结婚划不划算.md';
  const resolve=(href:string)=>resolveDocumentLink(href,book,upstream.repository,upstream.commit,paths);
- assert.equal(resolve('../docs/结婚划不划算.md#婚姻'),documentHref(marriage)+'#%E5%A9%9A%E5%A7%BB');
- assert.equal(resolve(upstream.repository+'/blob/main/'+marriage),documentHref(marriage));
+ assert.equal(resolve('../docs/结婚划不划算.md#婚姻'),documentHref(marriage,upstream.commit)+'#%E5%A9%9A%E5%A7%BB');
+ assert.equal(resolve(upstream.repository+'/blob/main/'+marriage),documentHref(marriage,upstream.commit));
  assert.equal(resolve('#本章'),'#本章');
  assert.ok(resolve('../tools/build.js').includes('/blob/'+upstream.commit+'/tools/build.js'));
  const html=renderToStaticMarkup(React.createElement(SourceMarkdown,{path:book,upstream,markdown:'## 标题\n\n[专题](../docs/结婚划不划算.md)\n\n| 项目 | 值 |\n|---|---|\n| 阅读 | 全文 |\n\n<script>alert(1)</script>\n\n[危险](javascript:alert%281%29)'}));
- assert.ok(html.includes('id="标题"'));assert.ok(html.includes('<table>'));assert.ok(html.includes(documentHref(marriage)));assert.ok(!html.includes('<script'));assert.ok(!html.includes('javascript:'));
+ assert.ok(html.includes('id="标题"'));assert.ok(html.includes('<table>'));assert.ok(html.includes(documentHref(marriage,upstream.commit)));assert.ok(!html.includes('<script'));assert.ok(!html.includes('javascript:'));
 });
 test('完整长文入库、检索、分页、幂等及拒绝正文覆盖',async()=>{
  try {

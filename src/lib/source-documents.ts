@@ -1,4 +1,6 @@
 import { readFileSync } from "node:fs";
+import { resolve,dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 import { createHash } from "node:crypto";
 import type { Pool } from "pg";
 import manifest from "../../content/upstream/manifest.json";
@@ -15,14 +17,15 @@ const articleChapters:Record<string,string[]>={
 export function isContentFile(path:string) {
   return path==="LICENSE"||path==="LICENSE-CODE"||path.endsWith(".md")&&!path.startsWith(".claude/")&&!path.startsWith("skills/")&&!["AGENTS.md","CLAUDE.md"].includes(path);
 }
-export function sourceDocuments() {
+export function sourceDocuments(root=dirname(fileURLToPath(new URL("../../content/upstream/manifest.json",import.meta.url))), snapshot=manifest, tree=inventory) {
+  const manifest=snapshot,inventory=tree;
   if(inventory.commit!==manifest.commit||inventory.tree!==manifest.sourceTree)throw new Error("来源目录树不一致");
   if(new Set(inventory.files.map(file=>file.path)).size!==inventory.files.length)throw new Error("来源清单重复");
   const included=inventory.files.filter(file=>isContentFile(file.path));
   if(inventory.files.some(file=>(file.status==="included")!==isContentFile(file.path))||included.length!==manifest.files.length)throw new Error("来源文件范围不完整");
   return included.map(file=>{
     if(file.path.startsWith("/")||file.path.split("/").some(part=>part===".."||part===".")||file.path.includes("\\"))throw new Error("来源路径无效");
-    const bytes=readFileSync(new URL("../../content/upstream/"+file.path,import.meta.url));
+    const bytes=readFileSync(resolve(root,file.path));
     const sha256=createHash("sha256").update(bytes).digest("hex");
     const gitBlob=createHash("sha1").update(`blob ${bytes.length}\0`).update(bytes).digest("hex");
     if(gitBlob!==file.gitBlob||sha256!==manifest.files.find(item=>item.path===file.path)?.sha256)throw new Error(`来源摘要不符：${file.path}`);

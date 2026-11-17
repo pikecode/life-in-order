@@ -18,7 +18,10 @@
     "test:search": "tsx scripts/evaluate-search.ts",
     "usage:report": "tsx scripts/report-usage.ts",
     "usage:prune": "tsx scripts/prune-usage.ts",
-    "content:audit": "tsx scripts/audit-content.ts"
+    "content:audit": "tsx scripts/audit-content.ts",
+    "content:manage": "tsx scripts/content-maintenance.ts",
+    "admin:start": "tsx scripts/admin-server.ts",
+    "admin:credentials": "tsx scripts/admin-password.ts"
   },
   "dependencies": {
     "dotenv": "^18.0.10",

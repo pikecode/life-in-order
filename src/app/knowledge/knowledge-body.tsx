@@ -1,14 +1,13 @@
 import { upstreamUrl } from "../../../content/moving";
 import type { upstream as upstreamMetadata } from "../../../content/moving";
 import type { getKnowledge } from "@/lib/content-db";
-import { highlightParts } from "@/lib/knowledge-search";
+import { knowledgeAdvice } from "@/lib/knowledge-search";
+import Highlight from "./highlight";
+export {default as Highlight} from "./highlight";
 
 type Entry=Awaited<ReturnType<typeof getKnowledge>>[number];
-export function Highlight({text,terms}:{text:string;terms:string[]}) {
-  return highlightParts(text,terms).map((part,index)=>part.match?<mark key={index}>{part.text}</mark>:part.text);
-}
-export function KnowledgeDetails({entry,upstream,terms=[]}:{entry:Entry;upstream:typeof upstreamMetadata;terms?:string[]}) {
-  return <details className="knowledge-details"><summary>查看依据与原文 <span aria-hidden="true">⌄</span></summary><div className="knowledge-details-content">
+export function KnowledgeDetails({entry,upstream,terms=[],compact=false}:{entry:Entry;upstream:typeof upstreamMetadata;terms?:string[];compact?:boolean}) {
+  return <details className={`knowledge-details${compact?" evidence-link":""}`}><summary title={compact?"查看成本收益、来源与完整原文":undefined}>{compact?"依据":"查看依据与原文"} <span aria-hidden="true">⌄</span></summary><div className="knowledge-details-content">
     <p className="reader-eyebrow">{entry.path.replace(/^book\/\d+-/, "").replace(/\.md$/, "")} / 第 {entry.entry_number} 条</p>
     <dl className="reader-values"><div><dt>上游成本</dt><dd>{entry.data.cost}</dd></div><div><dt>上游收益</dt><dd>{entry.data.benefit}</dd></div></dl>
     <section className="reader-evidence" aria-label="证据与来源"><h3>依据，从哪里来？</h3><p>上游证据等级：{entry.data.evidence}</p><p>{entry.data.sources}</p>
@@ -20,14 +19,14 @@ export function KnowledgeDetails({entry,upstream,terms=[]}:{entry:Entry;upstream
     <a className="reader-upstream" href={upstreamUrl(entry.path,upstream)} target="_blank" rel="noopener noreferrer">查看上游章节原文 ↗</a>
   </div></details>;
 }
-export default function KnowledgeBody({entry,upstream,terms=[],heading="h2"}:{
-  entry:Entry;upstream:typeof upstreamMetadata;terms?:string[];heading?:"h1"|"h2";
+export default function KnowledgeBody({entry,upstream,terms=[],heading="h2",compactEvidence=false}:{
+  entry:Entry;upstream:typeof upstreamMetadata;terms?:string[];heading?:"h1"|"h2"|"h3";compactEvidence?:boolean;
 }) {
   const Heading=heading;
-  const advice=entry.data.body.match(/^- 说人话：(.+)$/m)?.[1];
+  const advice=knowledgeAdvice(entry.data.body);
   return <>
     <Heading><Highlight text={entry.data.title} terms={terms} /></Heading>
     {advice?<p className="reader-advice"><Highlight text={advice} terms={terms} /></p>:<pre className="knowledge-body">{entry.data.body}</pre>}
-    <KnowledgeDetails entry={entry} upstream={upstream} terms={terms} />
+    <KnowledgeDetails entry={entry} upstream={upstream} terms={terms} compact={compactEvidence} />
   </>;
 }

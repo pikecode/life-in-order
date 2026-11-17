@@ -10,3 +10,6 @@ output/
 backups/
 *.dump
 *.partial-*
+
+# 运维下载缓存与待审报告，使用数据库备份及运维目录保存
+content/updates/

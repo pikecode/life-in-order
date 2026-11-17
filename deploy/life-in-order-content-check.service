@@ -1,0 +1,17 @@
+[Unit]
+Description=生活有序检查上游更新（不自动发布）
+After=network-online.target postgresql.service
+Wants=network-online.target
+[Service]
+Type=oneshot
+User=lifeadmin
+Group=lifeadmin
+WorkingDirectory=/opt/life-in-order/source
+EnvironmentFile=/etc/life-in-order-migrate.env
+Environment=NODE_OPTIONS=--max-old-space-size=384
+ExecStart=/usr/bin/node --import tsx scripts/content-maintenance.ts check
+UMask=0077
+Nice=15
+MemoryMax=512M
+CPUQuota=25%
+TimeoutStartSec=10min

@@ -1,3 +1,4 @@
+import {getPublicContent} from "@/lib/content-publication";
 import SearchTracker from "./search-tracker";
 import SiteHeader from "../site-header";
 import KnowledgeSearchForm from "./search-form";
@@ -6,9 +7,8 @@ import KnowledgeDirectory from "./directory";
 import BrowseLink from "./browse-link";
 import { commonQuestions, knowledgeTopics } from "@/lib/knowledge-search";
 import Link from "next/link";
-import { contentVersion } from "../../../content/moving";
-import { getContent, getKnowledgeChapters, searchKnowledge } from "@/lib/content-db";
-import {searchDocuments,relatedArticles,searchChapterTitles} from "@/lib/documents";
+import {  getKnowledgeChapters, searchKnowledge } from "@/lib/content-db";
+import {searchDocuments,relatedArticles,searchChapterTitles,getChapterPreviews} from "@/lib/documents";
 import {documentHref} from "@/lib/document-links";
 import DocumentCard from "../library/document-card";
 export const dynamic = "force-dynamic";
@@ -20,7 +20,7 @@ export default async function Knowledge({
   const params = await searchParams;
   const q = typeof params.q === "string" ? params.q.slice(0, 500) : "";
   const page = typeof params.page === "string" ? Number(params.page) : 1;
-  const { upstream } = await getContent(contentVersion);
+  const { upstream } = await getPublicContent();
   if (!upstream) throw new Error("来源尚未导入");
   const topic = typeof params.topic === "string" ? params.topic : "";
   const mode = params.mode === "keyword" ? "keyword" : "hybrid";
@@ -30,6 +30,7 @@ export default async function Knowledge({
     getKnowledgeChapters(upstream.commit),
   ]);
   const matchedChapters=await searchChapterTitles(upstream.commit,result.query,result.topic,result.chapter);
+  const chapterPreviews=await getChapterPreviews(upstream.commit,matchedChapters.map(document=>document.path));
   const articleResult=result.query?await searchDocuments(upstream.commit,result.query,"article",result.topic,1,mode==="hybrid"):null;
   const articles=articleResult?.entries??(result.topic?await relatedArticles(upstream.commit,result.topic,result.chapter):[]);
   const searchUrl = (query: string, selectedTopic = result.topic, selectedChapter = "") =>
@@ -94,9 +95,9 @@ export default async function Knowledge({
       {result.semanticStatus && result.semanticStatus !== "ready" && <p role="status" className="fine-print">{result.semanticStatus === "incomplete" ? "语义索引尚未完成" : result.semanticStatus === "disabled" ? "语义匹配尚未配置" : "语义匹配暂时不可用"}，本次已使用关键词查找。</p>}
       {result.expansions.length > 0 && <p className="fine-print">同时查找：{result.expansions.join("、")}</p>}
       </details>
-      {matchedChapters.length>0&&<section className="related-documents" aria-label="匹配的完整章节"><h2>按章节阅读</h2>{matchedChapters.map(document=><DocumentCard key={document.path} document={document}/>)}</section>}
-      {articles.length>0&&<section className="related-documents" aria-label="专题长文"><h2>把这个话题完整读明白</h2>{articleResult?articles.slice(0,3).map(document=><DocumentCard key={document.path} document={document}/>):articles.map(article=><Link key={article.path} href={documentHref(article.path)}>{article.title} →</Link>)}<Link href={"/library?"+new URLSearchParams({kind:"article",q:result.query,topic:result.topic,mode})}>查看专题长文{articleResult?`（${articleResult.total} 篇）`:""} →</Link></section>}
-      {result.entries[0]&&<Link className="knowledge-start-sequence" href={`/read/${result.entries[0].path.slice(5,7)}/${result.entries[0].entry_number}`}><span><small>{result.query?"选中线索，接着阅读":"不用逐条打开，从这里顺着读"}</small><strong>{result.query?"从第一条结果开始读":"开始顺序阅读"}</strong></span><span aria-hidden="true">→</span></Link>}
+      {matchedChapters.length>0&&<section className="related-documents" aria-label="匹配的完整章节"><h2>按章节阅读</h2>{matchedChapters.map(document=><DocumentCard key={document.path} document={document} preview={chapterPreviews[document.path]}/>)}</section>}
+      {articles.length>0&&<section className="related-documents" aria-label="专题长文"><h2>把这个话题完整读明白</h2>{articleResult?articles.slice(0,3).map(document=><DocumentCard key={document.path} document={document} preview={chapterPreviews[document.path]}/>):articles.map(article=><Link key={article.path} href={documentHref(article.path,article.source_commit)}>{article.title} →</Link>)}<Link href={"/library?"+new URLSearchParams({kind:"article",q:result.query,topic:result.topic,mode})}>查看专题长文{articleResult?`（${articleResult.total} 篇）`:""} →</Link></section>}
+      {result.entries[0]&&<Link className="knowledge-start-sequence" href={`/read/${result.entries[0].path.slice(5,7)}/${result.entries[0].entry_number}?source=${upstream.commit}`}><span><small>{result.query?"选中线索，接着阅读":"不用逐条打开，从这里顺着读"}</small><strong>{result.query?"从第一条结果开始读":"开始顺序阅读"}</strong></span><span aria-hidden="true">→</span></Link>}
       {(result.query||result.topic)&&<nav className="knowledge-clues" aria-label="搜索线索与当前筛选">
         <div className="active-filters"><span>当前范围</span>
           <Link href={filterUrl("")} aria-current={!result.topic?"page":undefined}>全部知识</Link>

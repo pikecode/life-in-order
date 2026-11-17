@@ -1,0 +1,27 @@
+[Unit]
+Description=生活有序内容管理
+After=network.target postgresql.service
+[Service]
+Type=simple
+User=lifeadmin
+Group=lifeadmin
+WorkingDirectory=/opt/life-in-order/source
+EnvironmentFile=/etc/life-in-order-migrate.env
+Environment=APP_URL=https://ompeak.com ADMIN_PORT=3101 NODE_OPTIONS=--max-old-space-size=384
+LoadCredential=admin-config:/etc/life-in-order-admin.json
+ExecStart=/usr/bin/node --import tsx scripts/admin-server.ts
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=15
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/life-in-order/source/content/updates /opt/life-in-order/source/backups
+UMask=0077
+MemoryMax=512M
+MemorySwapMax=256M
+CPUQuota=75%
+Nice=10
+[Install]
+WantedBy=multi-user.target

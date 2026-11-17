@@ -1,6 +1,6 @@
 # 直接部署与备份恢复
 
-当前主方案为 Node.js + PostgreSQL，不需要 Docker。此文档是部署操作说明；尚未创建生产资源或部署公网服务。
+当前主方案为 Node.js + PostgreSQL，不需要 Docker。已部署至 https://ompeak.com；实际主机、独立服务、证书及验收见 [2026-11-11 部署记录](deployment-2026-11-11.md)。以下为通用操作说明。
 
 ## 运行要求
 

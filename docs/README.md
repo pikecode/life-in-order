@@ -42,3 +42,9 @@
 - [完整来源同步实施](plans/2026-11-10-complete-source-content.md)：长文、章节导读、档案、分段与验收。
 - [来源完整性报告](reports/source-coverage.json)：逐文件摘要、排除原因、数据库及索引对账。
 - [ADR-006](adr/006-complete-source-documents.md)：完整文档与短知识并存。
+
+- [内容更新维护](content-maintenance.md)：每日检查、报告、准备、审核发布与回退。
+
+- [网页内容管理](admin-review.md)：管理员登录、前后原文对照、审核与后台任务。
+
+- [生活手册卡片](plans/2026-11-12-handbook-cards.md)：三类内容形态、原位阅读及章节衔接。

@@ -41,3 +41,7 @@ export function highlightParts(text: string, terms: string[]) {
   return text.split(pattern).filter(Boolean).map((part) => ({ text: part,
     match: terms.some(term => term.toLocaleLowerCase() === part.toLocaleLowerCase()) }));
 }
+
+export function knowledgeAdvice(body:string) {
+  return body.match(/^- 说人话：(.+)$/m)?.[1]??null;
+}

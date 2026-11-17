@@ -1,0 +1,8 @@
+[Unit]
+Description=生活有序每日检查上游更新
+[Timer]
+OnCalendar=*-*-* 04:30:00
+RandomizedDelaySec=20m
+Persistent=true
+[Install]
+WantedBy=timers.target

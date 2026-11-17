@@ -1,0 +1,113 @@
+# 2026-11-11 服务器部署记录
+
+当前状态：已于 14:45 CST 上线 https://ompeak.com。下面按阶段保留过程记录，以末尾上线结果为准。
+
+服务器：47.92.236.28，SSH 别名 mcp-ompeak。用户授权采用关键词优先、小规模运行方案。
+
+## 已确认完成
+
+- 创建系统用户 lifeinorder，源文件目录 /opt/life-in-order/source、releases 目录及独立备份目录 /var/backups/life-in-order。
+- 创建全新 PostgreSQL 数据库 life_in_order，迁移角色 lio_owner、运行角色 lio_app。仅服务器 /etc/life-in-order-migrate.env 和 /etc/life-in-order.env 保存真实凭据，权限 0600，未复制本机数据库或历史个人数据。
+- 导入数量：34 章节、9 专题、244 核实档案、6 参考文件；772 短知识、1837 分段。迁移正常退出，已授予内容只读与 usage_events 写入/删除权限。
+- 首次 pg_dump 备份 initial.dump 成功；尚未执行生产备份恢复演练。
+- 添加 2 GiB /swapfile-life-in-order，权限 0600，启用并写入 fstab。
+- Linux npm ci 成功。服务器源目录 next.config.ts 临时设 experimental.cpus=1；构建以 lifeinorder、nice 15、Node 堆上限 640 MiB 执行，无真实凭据注入构建。
+
+## 尚待确认或完成
+
+构建日志最后收到“Compiled successfully in 27.9s / Running TypeScript”。随后 SSH 多次出现连接、握手或存活检测超时；尝试仅停止 lifeinorder 的 next build，但未收到执行回执，不能确认构建状态。HTTP 80 检查曾返回 Nginx 200，不能据此断定现有业务都正常。
+
+应用 systemd 单元写入命令已发送，使用 127.0.0.1:3100 和独立用户；尚未确认写入及校验结果。每日维护脚本与 timer 定义已写入请求，启用及首次运行命令未返回，需检查实际状态，不能声称定时备份已生效。
+
+服务尚未启动或切换。current 链接和正式 release 尚未建立。Nginx 未修改、未开放公网应用，未重启机器。域名待用户提供。
+
+## 恢复连接后的顺序
+
+1. 检查服务器负载、SSH、现有 solecare 和 Nginx 站点，优先停止本轮构建进程，确认没有继续占用资源。
+2. 查看 /opt/life-in-order/build.log，检查 systemd 单元和 maintenance 脚本。受限主机避免继续原生构建，优先使用独立 Linux 构建资源。
+3. 逐文件核对 293 份数据库正文与快照（此前核对命令已发送，但未收到结果，必须重做）。验证备份内容，确认定时维护是否正常。
+4. 构建成功后复制 standalone 为独立 release，建立 current，启动回环服务，验证 health、章节、长文及关键词搜索；不运行生产测试套件。
+5. 收到域名并确认 DNS 后配置独立 Nginx 站点及 HTTPS，再检查公网。保留现有业务端口，不启用本机 Ollama 或 pgvector。
+
+本次未承诺语义搜索、异地备份和负载容量。初始 APP_URL 为回环临时值，域名上线前必须改为实际 HTTPS 地址。
+
+## 域名确认及后续检查
+
+用户确认域名为 pikecode.com，DNS A 实测为 47.92.236.28。HTTPS 校验报告证书域名不匹配，不能认为已配置本站证书。新增 SSH 重试仍在 banner exchange 阶段超时，未能确认构建和服务状态，也未修改 Nginx。后续需先恢复 SSH，再检查已有域名站点与证书，避免覆盖其他服务；APP_URL 应设置为 https://pikecode.com。
+
+## 重启后恢复与部署结果（14:24 CST）
+
+用户提供截图显示已重启。SSH 恢复；未获取到上次 OOM 证据，不能确定先前故障根因。旧构建被终止且无 standalone 产物。
+
+重新构建使用 systemd 临时服务，MemoryMax=850M、MemorySwapMax=768M、CPUQuota=75%、Nice=15，Node 堆上限 512 MiB。修正构建日志目录权限后构建成功，页面数据单工作进程。服务器临时配置跳过重复类型检查，本机 npm run typecheck 已通过（2026-11-11），此差异只用于服务器生成产物。
+
+已部署 release `/opt/life-in-order/releases/20261111-06d2269`，current 链接生效。life-in-order.service 启动并开机启用，lifeinorder 用户，127.0.0.1:3100，APP_URL=https://pikecode.com。初次健康检查 ready、内存约 73 MB。293 份完整文档与快照逐文件比较一致。实际 HTTP 验证首页、不要早死关键词章节结果、婚姻长文、01 章连续阅读均 200；旧计划接口 410。
+
+每日维护 timer 已启用，已有一次 5.2 MB 的定时备份，首次 initial.dump 同时保留。备份暂未安装自动删除策略，需监控空间；尚无异地备份及生产恢复演练。
+
+Nginx 新建独立 pikecode.com HTTP 验证站点，配置校验通过；其他站点未覆盖。证书申请首次接口超时，重试遭验证 403。公网探测明确返回 `Server: Beaver` 和 `Non-compliance ICP Filing`，页面指向阿里云备案拦截；服务器本机同路径为 Nginx 200，验证文件内容正确。域名备案/接入状态造成公网拦截，需要用户在阿里云确认。尚未签发 pikecode.com 证书，未安装最终 HTTPS 代理，HTTP 普通路径保留 503；应用只在回环运行。
+
+待备案或接入问题解除后，再申请证书，安装独立 HTTP→HTTPS 与 443→3100 代理，检查公网。不要声称已公网正式上线。
+
+## ompeak.com 上线结果（14:45 CST）
+
+用户授权改用 ompeak.com。A 解析为 47.92.236.28，无同名现有 Nginx 站点，公网 HTTP 不存在 pikecode.com 的备案拦截。通过 webroot 签发 Let's Encrypt 证书成功，有效期至 2027-02-09；certbot.timer 与续期后 Nginx reload hook 均已配置。
+
+APP_URL 已改为 https://ompeak.com，应用重启健康正常。独立 Nginx 站点 80 跳转 HTTPS、443 代理到 127.0.0.1:3100，生产配置副本见 deploy/nginx.ompeak.com.conf。原有其他子域站点未覆盖；pikecode.com 不再配置为本站域名。
+
+公网实际验证：有效 HTTPS 证书、HTTP→HTTPS、health ready、首页、不要早死章节标题关键词匹配、婚姻长文、连续阅读均通过。life-in-order、certbot.timer、life-in-order-maintenance.timer 均 active。关键词模式已启用，本机语义模型未部署。未做并发负载、异地备份和生产恢复演练。
+
+## 内容维护上线（17:40 CST）
+
+新增 `content_candidates`、`content_publication`、`content_publication_events`。迁移前已备份，线上指针仍为初始固定提交；授予应用读取指针及发布过的目标提交列权限，不授予候选或发布写入权限。
+
+新版应用使用 `/opt/life-in-order/releases/20261111-maintenance`；旧产物保留。限资源构建成功并切换服务。新增每日约 04:30 的上游检查 timer，仅检查，不自动准备或发布；首次真实运行成功，main 与当前提交一致。每日统计清理与备份定时器继续有效。维护命令在源码目录运行，凭据仍由 `/etc/life-in-order-migrate.env` 提供，不进 Git。
+
+公网健康、页面及版本定位链接已验证，详见内容维护说明与实施计划。回退/发布的真实命令演练只在隔离测试库进行，未替用户批准新上游内容。
+
+## 网页管理上线（18:30 CST）
+
+管理入口 /admin/，独立 life-in-order-admin.service / lifeadmin / 127.0.0.1:3101。公开应用仍监听 3100，未提升公开应用数据库权限。新增管理任务、文件审阅、最近检查三张表；迁移前备份 `/var/backups/life-in-order/pre-admin-20261111.dump`。
+
+管理员配置经 systemd LoadCredential 加载，环境从迁移凭据文件读取；仅管理进程持有维护权限。管理服务源码只读，仅 updates/backups 可写。定时检查调整为 lifeadmin 用户，配合数据库操作锁，避免并发写快照和文件所有权冲突。
+
+Nginx 管理路径独立代理，站点配置修改前备份为 `/etc/nginx/life-in-order-before-admin.conf.bak`。管理登录与退出、CSRF、网页检查任务、任务结果及公开健康检查均验证；GitHub TLS 失败如实显示，重试成功显示无更新，线上提交未切换。操作及凭据说明见 docs/admin-review.md。
+
+## 生活手册卡片上线（2026-11-12）
+
+发布阅读站 UI 至 `/opt/life-in-order/releases/20261112-handbook-polish`，旧版本保留。三类卡片、原位展开、辅助搜索折叠、跨章与专题衔接已实现。构建内存上限 700M、Swap 上限 512M、CPU 60%，采用独立 release 与健康失败自动回切步骤；未更改数据或管理服务权限。
+
+本地类型检查、35 项测试、生产构建与浏览器布局/交互检查通过；公网健康、知识目录、章节卡、专题、连续阅读和管理员登录页可读。详见 `plans/2026-11-12-handbook-cards.md`。
+
+2026-11-13：发布 `/opt/life-in-order/releases/20261113-folio-fix`，修正阅读页章号与条目序号混淆。旧 release 保留，健康正常，公开阅读和管理服务均 active。未修改内容数据。
+
+### 2026-11-17 连续阅读合页
+
+- 发布目录：`/opt/life-in-order/releases/20261117-chapter-sheets`，上一版 `20261113-folio-fix` 保留。
+- 同章合为一张纸页，章节头只显示一次；条目独立编号与阅读统计保持，依据入口轻量化，原文与成本收益仍可展开。
+- 类型检查、本地构建、服务器限额构建及两项回归测试通过；浏览器检查手机与桌面、键盘展开、跨章锚点，公网健康检查通过。
+- 无依赖或数据库变更；管理服务独立运行，未调整。
+
+### 2026-11-17 阅读续接与标题预告
+
+- 发布目录：`/opt/life-in-order/releases/20261117-reading-continuity`；保留上一版 `20261117-chapter-sheets`。
+- 本机单一阅读位置、首页继续/清除、组末三条真实标题预告；仅浏览器存储，无数据库迁移、依赖或内容更新。
+- 本地与服务器构建、类型检查、针对性测试与浏览器检查通过；管理服务独立运行未调整。
+
+### 2026-11-17 生活杂志式首页与阅读页
+
+- 新发布：`/opt/life-in-order/releases/20261117-editorial`；保留 `20261117-reading-continuity`。
+- 首页真实知识醒目入口、主题快速跳转与更轻的主题卡；阅读页统一暖白/墨色/朱红层级，移动目录固定，锚点预留顶部空间。
+- 类型检查、三项针对性测试、构建及桌面/手机浏览器检查通过，无依赖、数据库及知识正文变更。
+
+### 2026-11-17 目录与长文视觉统一
+
+- 发布目录：`/opt/life-in-order/releases/20261117-library-polish`；上一版 `20261117-editorial` 保留。
+- 专题响应式双栏、知识目录与长文样式统一；长文目录支持当前小节标记、手机点选收起，无二级标题不显示空目录。
+- 类型检查、三项针对性测试、本地和服务器构建及浏览器检查通过。无数据与正文修改，管理服务未调整。
+
+### 2026-11-17 共用阅读设置与长文续读
+
+- 发布目录：`/opt/life-in-order/releases/20261117-reader-comfort`，上一版 `20261117-library-polish` 保留。
+- 短知识与全文文档共用字号和行距设置；长文按来源版本与路径保存小节内相对位置，返回提示、主动点击续读，支持从头读。
+- 类型检查、四项针对性测试、浏览器检查与本地/服务器构建通过；存储禁用静默降级，设置可本页生效。无数据库迁移、依赖或内容修改。
