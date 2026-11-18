@@ -18,7 +18,7 @@ export default function RandomDiscovery({initialItems,sourceCommit}:{initialItem
   finally{request.current=null;if(!controller.signal.aborted)setPending(false);}
  };
  return <section id="home-discovery" className="random-discovery" aria-labelledby="discovery-title"><header><div><p>偶然遇见，也许正好需要</p><h2 id="discovery-title">随便翻翻</h2></div><button type="button" onClick={refresh} aria-disabled={pending}>{pending?'正在换…':'换一组 ↻'}</button></header><p className="discovery-intro">随机几条短知识、两篇专题，挑一条顺着读。</p>
-  <div className="discovery-grid" aria-busy={pending}>{items.map(item=><article className="discovery-card" key={item.id} data-kind={item.kind}><small>{item.label}</small><h3><Link href={item.href} prefetch={false}>{item.title}<span aria-hidden="true"> ↗</span></Link></h3></article>)}</div>
+  <div className="discovery-groups" aria-busy={pending}>{(['knowledge','article'] as const).map(kind=><section className="discovery-group" key={kind} data-kind={kind} aria-label={kind==='knowledge'?'短知识':'专题长文'}><h3>{kind==='knowledge'?'短知识 · 随手读一条':'专题长文 · 深入读一篇'}</h3><div className="discovery-grid">{items.filter(item=>item.kind===kind).map(item=><article className="discovery-card" key={item.id} data-kind={item.kind}><small>{item.label}</small><h4><Link href={item.href} prefetch={false}>{item.title}<span aria-hidden="true"> →</span></Link></h4></article>)}</div></section>)}</div>
   {!items.length&&<p>暂时没有可展示的内容，先从上面的主题读起。</p>}<p className="discovery-status" role="status">{status}</p>
  </section>;
 }

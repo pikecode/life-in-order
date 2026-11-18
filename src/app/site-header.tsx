@@ -7,6 +7,7 @@ export default function SiteHeader({ current }: { current: "home" | "knowledge" 
       <span>生活有序<small>LIFE IN ORDER</small></span>
     </Link>
     <nav aria-label="主导航">
+      <Link href="/" aria-current={current === "home" ? "page" : undefined}>首页</Link>
       <Link href="/knowledge" aria-current={current === "knowledge" ? "page" : undefined}>知识目录</Link>
       <Link href="/library" aria-current={current === "library" ? "page" : undefined}>专题长文</Link>
     </nav>
