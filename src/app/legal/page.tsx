@@ -1,3 +1,4 @@
+export const metadata={title:"阅读与隐私说明"};
 import Link from "next/link";
 export default function Legal(){return <main className="legal">
   <Link href="/">← 返回生活有序</Link><p className="eyebrow">使用说明 · 2026-11-17</p><h1>阅读与隐私说明</h1>

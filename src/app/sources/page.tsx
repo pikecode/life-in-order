@@ -1,3 +1,4 @@
+export const metadata={title:"内容来源与许可"};
 import {getPublicContent} from "@/lib/content-publication";
 import Link from "next/link";
 import { getKnowledgeChapters } from "@/lib/content-db";

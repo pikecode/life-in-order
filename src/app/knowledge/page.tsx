@@ -1,3 +1,4 @@
+export const metadata={title:"知识目录"};
 import {getPublicContent} from "@/lib/content-publication";
 import SearchTracker from "./search-tracker";
 import SiteHeader from "../site-header";

@@ -1,3 +1,4 @@
+import {cache} from "react";
 import {upstream as initialSource} from "../../../../content/moving";
 import {getPublicContent,UnpublishedSourceError} from "@/lib/content-publication";
 import Link from 'next/link';
@@ -13,12 +14,22 @@ import {documentKindLabels} from '@/lib/source-documents';
 import {documentHref} from '@/lib/document-links';
 import {upstreamUrl} from '../../../../content/moving';
 export const dynamic='force-dynamic';
-export default async function DocumentPage({params,searchParams}:{params:Promise<{path:string[]}>;searchParams:Promise<{source?:string}>}) {
+type DocumentProps={params:Promise<{path:string[]}>;searchParams:Promise<{source?:string}>};
+const loadDocument=cache(async(rawPath:string,source:string)=>{
  let path:string;
- try{path=(await params).path.map(part=>decodeURIComponent(part)).join('/');}catch{notFound();}
+ try{path=decodeURIComponent(rawPath);}catch{notFound();}
  let upstream,manifest;
-  try{({upstream,manifest}=await getPublicContent((await searchParams).source??initialSource.commit));}catch(error){if(error instanceof UnpublishedSourceError)notFound();throw error;}if(!upstream)throw new Error('来源尚未导入');
+ try{({upstream,manifest}=await getPublicContent(source));}catch(error){if(error instanceof UnpublishedSourceError)notFound();throw error;}
+ if(!upstream)throw new Error('来源尚未导入');
  const document=await getDocument(upstream.commit,path);if(!document)notFound();
+ return {path,upstream,manifest,document};
+});
+export async function generateMetadata({params,searchParams}:DocumentProps){
+ const {document}=await loadDocument((await params).path.join('/'),(await searchParams).source??initialSource.commit);
+ return {title:document.title};
+}
+export default async function DocumentPage({params,searchParams}:DocumentProps) {
+ const {path,upstream,manifest,document}=await loadDocument((await params).path.join('/'),(await searchParams).source??initialSource.commit);
  const chapters=document.kind==='article'?await relatedChapters(upstream.commit,document.chapters):[];
  const articles=document.kind==='chapter'?await relatedArticles(upstream.commit,'',path.slice(5,7)):[];
  const headings=documentHeadings(document.markdown),outline=headings.filter(item=>item.depth===2);

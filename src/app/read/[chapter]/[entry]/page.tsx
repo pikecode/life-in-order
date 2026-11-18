@@ -1,3 +1,4 @@
+import {cache} from "react";
 import {upstream as initialSource} from "../../../../../content/moving";
 import {getPublicContent,UnpublishedSourceError} from "@/lib/content-publication";
 import Link from "next/link";
@@ -14,14 +15,24 @@ import {documentHref} from "@/lib/document-links";
 import ChapterEnding from "../../chapter-ending";
 import SourceMarkdown from "../../../library/markdown";
 export const dynamic="force-dynamic";
-export default async function ReadingPage({params,searchParams}:{params:Promise<{chapter:string;entry:string}>;searchParams:Promise<{source?:string}>}) {
-  const {chapter,entry}=await params;
+type ReadingProps={params:Promise<{chapter:string;entry:string}>;searchParams:Promise<{source?:string}>};
+const loadReading=cache(async(chapter:string,entry:string,source:string)=>{
   if(!knowledgeTopics.some(topic=>topic.chapters.includes(chapter))||! /^[1-9]\d{0,4}$/.test(entry))notFound();
   let upstream,manifest;
-  try{({upstream,manifest}=await getPublicContent((await searchParams).source??initialSource.commit));}catch(error){if(error instanceof UnpublishedSourceError)notFound();throw error;}
+  try{({upstream,manifest}=await getPublicContent(source));}catch(error){if(error instanceof UnpublishedSourceError)notFound();throw error;}
   if(!upstream)throw new Error("来源尚未导入");
   const [reading,chapters]=await Promise.all([getReadingBatch(upstream.commit,chapter,Number(entry)),getKnowledgeChapters(upstream.commit)]);
   if(!reading)notFound();
+  return {upstream,manifest,reading,chapters};
+});
+export async function generateMetadata({params,searchParams}:ReadingProps){
+  const {chapter,entry}=await params;
+  const {reading}=await loadReading(chapter,entry,(await searchParams).source??initialSource.commit);
+  return {title:reading.entries[0].data.title};
+}
+export default async function ReadingPage({params,searchParams}:ReadingProps) {
+  const {chapter,entry}=await params;
+  const {upstream,manifest,reading,chapters}=await loadReading(chapter,entry,(await searchParams).source??initialSource.commit);
   const documents=await Promise.all([...new Set(reading.entries.map(item=>item.path))].map(path=>getDocument(upstream.commit,path)));
   const articles=await relatedArticles(upstream.commit,reading.topic.id);
   const groups:typeof reading.entries[]=[];
@@ -40,15 +51,11 @@ export default async function ReadingPage({params,searchParams}:{params:Promise<
       <div className="reading-grid">
         <aside className="reading-outline">
           <Link className="reading-back" href="/#home-topics" aria-label="换个阅读主题">←<span> 换主题</span></Link>
-          <details className="reading-location">
-            <summary><span className="reading-topic">{reading.topic.title}<small className="reading-range">第 {reading.position}–{reading.position+reading.entries.length-1} / {reading.total} 条</small></span><span className="reading-directory-label">章节目录 <span aria-hidden="true">⌄</span></span></summary>
-            <nav aria-label="阅读章节">{topicChapters.map(item=><Link key={item.id} aria-current={item.id===chapter?"location":undefined} href={`/read/${item.id}/1?source=${upstream.commit}`}><span>{item.title}</span></Link>)}</nav>
-            <Link className="reading-all" href={`/knowledge?topic=${reading.topic.id}`}>查看全部条目 →</Link>
-          </details>
+          <ReadingPosition positions={reading.entries.map(item=>({sourceCommit:upstream.commit,chapter:item.path.slice(5,7),entry:item.entry_number,chapterTitle:chapters.find(chapter=>chapter.id===item.path.slice(5,7))?.title??"本章"}))} topic={reading.topic} chapters={topicChapters} range={{start:reading.position,end:reading.position+reading.entries.length-1,total:reading.total}}/>
           <ReaderSettings/>
         </aside>
         <section className="reading-stream" aria-label="连续阅读内容">
-          <ReadingPosition positions={reading.entries.map(item=>({sourceCommit:upstream.commit,chapter:item.path.slice(5,7),entry:item.entry_number,chapterTitle:chapters.find(chapter=>chapter.id===item.path.slice(5,7))?.title??"本章"}))}/>
+
           <h1 className="reading-page-title">{reading.topic.title} · 连续阅读</h1>
           {groups.map((items,groupIndex)=>{
             const currentChapter=items[0].path.slice(5,7),chapterName=chapters.find(c=>c.id===currentChapter)?.title??"本章";

@@ -1,4 +1,6 @@
 import Link from "next/link";
+import RandomDiscovery from "./random-discovery";
+import type {DiscoveryItem} from "@/lib/discovery";
 import ContinueReading from "./continue-reading";
 import HomeSearchForm from "./home-search-form";
 import SiteHeader from "./site-header";
@@ -10,8 +12,10 @@ export default function HomeHub({
   chapters,
   articles,
   sourceCommit,
+  discovery,
 }: {
   sourceCommit:string;
+  discovery:DiscoveryItem[];
   articles: DocumentSummary[];
   highlights: Awaited<ReturnType<typeof getKnowledgeHighlights>>;
   chapters: Awaited<ReturnType<typeof getKnowledgeChapters>>;
@@ -26,23 +30,24 @@ export default function HomeHub({
           <div className="home-promise">
             <p className="eyebrow">生活有序 · 一本可以随时翻开的生活手册</p>
             <h1 id="home-title">把生活，<br/><span>读明白一点。</span></h1>
-            <p className="intro">关于身体、工作、家与日常。<br/>从一条感兴趣的知识，读到更多生活的可能。</p>
-            <a className="home-explore-link" href="#home-topics">挑一个主题，开始读 <span aria-hidden="true">↓</span></a>
+            <p className="intro">从感兴趣的一条知识，顺着读下去。</p>
+            <div className="home-entry-actions"><Link className="home-explore-link" href="#home-topics">挑一个主题，开始读 <span aria-hidden="true">↓</span></Link><Link className="home-discovery-jump" href="#home-discovery">随便翻翻 ↓</Link></div>
           </div>
           {featured&&<Link className="home-featured" href={`/read/${featured.chapter}/${featured.entry}?source=${sourceCommit}`}><span className="featured-kicker">不妨，从这一条读起 <span aria-hidden="true">↗</span></span><h2>{featured.title}</h2><span className="featured-footer"><span>{featuredChapter?.title??"日常与情绪"} · 第 {featured.entry} 条</span><span>翻开这一页 →</span></span></Link>}
         </section>
         <ContinueReading/>
         <section id="home-topics" className="home-explore" aria-labelledby="home-topics-title">
           <div className="home-section-heading"><h2 id="home-topics-title">生活里的七个主题</h2><p>{highlights.reduce((sum,item)=>sum+item.count,0)} 条短知识 · {articles.length} 篇专题长文</p></div>
-          <nav className="home-topic-jumps" aria-label="快速选择阅读主题">{highlights.map(topic=><a key={topic.id} href={`#topic-${topic.id}`}>{topic.title}</a>)}</nav>
+          <nav className="home-topic-jumps" aria-label="快速选择阅读主题">{highlights.map(topic=><Link key={topic.id} href={`#topic-${topic.id}`}>{topic.title}</Link>)}</nav>
           <div className="topic-exhibits">{highlights.map((topic,index)=><article className="topic-exhibit" id={`topic-${topic.id}`} key={topic.id}>
-            <Link className="topic-cover" href={`/read/${topic.entries[0].chapter}/${topic.entries[0].entry}?source=${sourceCommit}`}><span className="topic-index">{String(index+1).padStart(2,"0")} <span>{topic.count} 条知识</span></span><h3>{topic.title}</h3><span className="topic-start">从这里开始读 <span aria-hidden="true">↗</span></span></Link>
-            <ul>{topic.entries.map(entry=><li key={entry.chapter+":"+entry.entry}><Link href={`/read/${entry.chapter}/${entry.entry}?source=${sourceCommit}`}>{entry.title}<span aria-hidden="true">↗</span></Link></li>)}</ul>
+            <Link className="topic-cover" href={`/read/${topic.entries[0].chapter}/${topic.entries[0].entry}?source=${sourceCommit}`}><span className="topic-index">{String(index+1).padStart(2,"0")} <span>{topic.count} 条知识</span></span><h3>{topic.title}</h3></Link>
+            <ul>{topic.entries.map(entry=><li key={entry.chapter+":"+entry.entry}><Link href={`/read/${entry.chapter}/${entry.entry}?source=${sourceCommit}`}>{entry.title}</Link></li>)}</ul>
             {articles.filter(article=>article.topics.includes(topic.id)).sort((a,b)=>Number(b.chapters.includes(topic.chapters[0]))-Number(a.chapters.includes(topic.chapters[0]))).slice(0,1).map(article=><Link className="topic-article" key={article.path} href={documentHref(article.path,article.source_commit)}><small>专题长文</small>{article.title} →</Link>)}
             <details className="topic-more"><summary>查看主题目录</summary><p>{topic.count} 条知识 · {topic.chapters.length} 章</p><div className="topic-chapter-peek">{chapters.filter(item=>topic.chapters.includes(item.id)).map(item=><Link key={item.id} href={`/read/${item.id}/1?source=${sourceCommit}`}>{item.title}</Link>)}</div><Link href={`/knowledge?topic=${topic.id}`}>查看全部条目 →</Link></details>
 
           </article>)}</div>
         </section>
+        <RandomDiscovery initialItems={discovery} sourceCommit={sourceCommit}/>
         <details className="home-search-secondary"><summary>想找某个具体问题？展开搜索 <span aria-hidden="true">⌕</span></summary>
           <div className="home-search-panel">
             <p className="eyebrow">从这里，找到线索</p>

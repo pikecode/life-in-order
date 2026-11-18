@@ -9,6 +9,5 @@ export default function ContinueReading(){
     refresh();window.addEventListener('storage',refresh);window.addEventListener('pageshow',refresh);
     return ()=>{window.removeEventListener('storage',refresh);window.removeEventListener('pageshow',refresh);};
   },[]);
-  if(!position)return null;
-  return <aside className="continue-reading" aria-label="继续上次阅读"><div><p>上次读到</p><h2>{position.chapterTitle}<span>第 {position.entry} 条</span></h2><small>仅保存在此浏览器，不代表已读完</small></div><Link href={readingPositionHref(position)}>接着读 →</Link><button type="button" onClick={()=>{try{localStorage.removeItem(readingPositionKey);}catch{}setPosition(null);}} aria-label="清除本机阅读位置">清除</button></aside>;
+  return <div className="continue-reading-slot"><aside className="continue-reading" aria-label={position?"继续上次阅读":"阅读提示"}><div><p>{position?`上次读到 · 第 ${position.entry} 条`:"随时停下，下次接着读。"}</p><h2>{position?position.chapterTitle:"挑一条感兴趣的知识。"}</h2></div>{position?<><Link href={readingPositionHref(position)}>接着读 →</Link><button type="button" onClick={()=>{try{localStorage.removeItem(readingPositionKey);}catch{}setPosition(null);}} aria-label="清除本机阅读位置">清除</button></>:<Link href="#home-topics">挑个主题 ↓</Link>}</aside></div>;
 }

@@ -1,3 +1,4 @@
+export const metadata={title:"专题与原始资料"};
 import {getPublicContent} from "@/lib/content-publication";
 import Link from 'next/link';
 import Form from 'next/form';

@@ -492,7 +492,7 @@ body:has(.knowledge-layout,.library-layout,.document-layout) .workspace-header{m
 /* 两种阅读页共用字号和行距，设置入口不占用每条正文空间。 */
 [data-reader]{--reader-size-delta:0px;--reader-line-height:1.95}
 [data-reader][data-font-size=large]{--reader-size-delta:2px}[data-reader][data-font-size=largest]{--reader-size-delta:4px}[data-reader][data-line-spacing=relaxed]{--reader-line-height:2.25}
-.reader-settings{position:relative;z-index:6;margin:15px 0;color:#5d6852}.reader-settings>summary{display:flex;align-items:center;gap:8px;min-height:44px;padding:8px 0;cursor:pointer;list-style:none;font-size:11px}.reader-settings>summary::-webkit-details-marker{display:none}.reader-settings>summary>b{font:20px/1.5 Georgia,serif;color:#7d503c;font-weight:400}.reader-settings[open]>summary{color:#a44e34}
+.reader-settings{position:relative;z-index:6;margin:15px 0;color:#5d6852}.reader-settings>.reader-settings-trigger{display:flex;align-items:center;gap:8px;min-height:44px;padding:8px 0;cursor:pointer;list-style:none;font-size:11px}.reader-settings>.reader-settings-trigger::-webkit-details-marker{display:none}.reader-settings>.reader-settings-trigger>b{font:20px/1.5 Georgia,serif;color:#7d503c;font-weight:400}.reader-settings[data-open=true]>summary{color:#a44e34}
 .reader-settings-panel{position:absolute;left:0;top:100%;width:274px;max-width:calc(100vw - 38px);background:#fffcf6;border:1px solid #d9d4c6;border-radius:4px;padding:20px;box-shadow:0 10px 35px #3b3c2926;font-size:12px;z-index:10}.reader-settings-panel fieldset{padding:0;margin:0 0 19px;border:0;min-width:0}.reader-settings-panel legend{font-size:11px;color:#707861;padding:0;margin-bottom:10px}.reader-settings-panel fieldset>div{display:flex;gap:7px}.reader-settings-panel button{min-height:44px;min-width:44px;padding:8px 12px;border:1px solid #ded9ca;background:transparent;border-radius:3px;font:inherit;color:#5b654e;cursor:pointer;flex:1}.reader-settings-panel button[aria-pressed=true]{background:#e7ebdc;border-color:#7b8c65;color:#36482b}.reader-settings-panel>p{font-size:10px;line-height:1.8;color:#787d6b;margin:3px 0 15px}.reader-settings-actions{display:flex;gap:12px;padding-top:12px;border-top:1px solid #e1ddcf}.reader-settings-actions button:first-child{border:0;font-size:11px}.reader-settings-actions button:last-child{background:#3d4d34;color:#fff;border-color:#3d4d34}.reader-settings :focus-visible{outline:3px solid #ad5037;outline-offset:3px}
 @media(max-width:760px){.reader-settings-panel{left:auto;right:0}}
 .knowledge-empty{border:1px solid #dfe2d9;border-radius:14px;background:#fff;padding:25px;margin:18px 0 25px}
@@ -502,8 +502,12 @@ body:has(.knowledge-layout,.library-layout,.document-layout) .workspace-header{m
 @media(max-width:760px){.legal .knowledge-empty h2{font-size:18px}}
 
 /* 设置入口有文字标签，面板依视口空间选择展开方向。 */
-.reader-settings>summary{width:fit-content;padding:7px 11px;border:1px solid #d7d7c6;border-radius:5px;background:#faf8f0;gap:7px;white-space:nowrap;min-height:44px}
-.reader-settings[open]>summary{background:#e9eddf;border-color:#aab593}
+.reader-settings>.reader-settings-trigger{width:fit-content;padding:7px 11px;border:1px solid #d7d7c6;border-radius:5px;background:#faf8f0;gap:7px;white-space:nowrap;min-height:44px}
+.reader-settings[data-open=true]>summary{background:#e9eddf;border-color:#aab593}
 .reader-settings-panel{margin-top:8px;max-height:var(--settings-max-height,calc(100dvh - 110px));overflow-y:auto;overscroll-behavior:contain}
-.reader-settings[data-placement=above]>.reader-settings-panel{top:auto;bottom:100%;margin-top:0;margin-bottom:8px}
-@media(max-width:760px){.reader-settings>summary>b{display:none}.reader-settings>summary>span{display:inline}.reader-settings>summary{font-size:11px;padding:7px 10px;min-height:44px}}
+
+@media(max-width:760px){.reader-settings>.reader-settings-trigger>b{display:none}.reader-settings>.reader-settings-trigger>span{display:inline}.reader-settings>.reader-settings-trigger{font-size:11px;padding:7px 10px;min-height:44px}}
+
+.reader-settings-panel{display:none;position:fixed;inset:auto;left:var(--settings-left,max(12px,calc(50vw - 137px)));top:var(--settings-top,15dvh);bottom:var(--settings-bottom,auto);width:min(274px,calc(100vw - 24px));max-width:none;max-height:var(--settings-max-height,70dvh);margin:0;color:#5d6852;z-index:20}
+.reader-settings-panel:is(:popover-open,[data-fallback-open=true]){display:block}
+.reader-settings-panel :focus-visible{outline:3px solid #ad5037;outline-offset:3px}
